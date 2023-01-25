@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Student_Health_Record_System" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LUNETTELAPPY\SQLEXPRESS;Initial Catalog=Student_Health_Record_System;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="student_health_records_system.Properties.Settings" SettingsPropertyName="Student_Health_Record_SystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.table_activityLogs" Member="table_activityLogs">
+    <Type Name="table_activityLog">
+      <Column Name="log_ID" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="admin_ID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="log_activity" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="table_adminAccount_table_activityLog" Member="table_adminAccount" ThisKey="admin_ID" OtherKey="admin_ID" Type="table_adminAccount" IsForeignKey="true" />
+      <Association Name="table_studentInfo_table_activityLog" Member="table_studentInfo" ThisKey="student_ID" OtherKey="student_ID" Type="table_studentInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.table_adminAccounts" Member="table_adminAccounts">
+    <Type Name="table_adminAccount">
+      <Column Name="admin_ID" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="admin_firstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_middleName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_lastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_phoneNum" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_department" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_access" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_status" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="table_adminAccount_table_activityLog" Member="table_activityLogs" ThisKey="admin_ID" OtherKey="admin_ID" Type="table_activityLog" />
+    </Type>
+  </Table>
+  <Table Name="dbo.table_studentFiles" Member="table_studentFiles">
+    <Type Name="table_studentFile">
+      <Column Name="stuFile_ID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="stuFile_name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="stuFile_fileType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="stuFile_recordType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="stuFile_location" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="table_studentInfo_table_studentFile" Member="table_studentInfo" ThisKey="student_ID" OtherKey="student_ID" Type="table_studentInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.table_studentInfo" Member="table_studentInfos">
+    <Type Name="table_studentInfo">
+      <Column Name="student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="student_firstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="student_middleName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="student_lastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="student_phoneNum" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="student_email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="table_studentInfo_table_activityLog" Member="table_activityLogs" ThisKey="student_ID" OtherKey="student_ID" Type="table_activityLog" />
+      <Association Name="table_studentInfo_table_studentFile" Member="table_studentFiles" ThisKey="student_ID" OtherKey="student_ID" Type="table_studentFile" />
+    </Type>
+  </Table>
+</Database>
