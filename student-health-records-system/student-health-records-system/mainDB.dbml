@@ -54,4 +54,25 @@
       <Association Name="table_studentInfo_table_studentFile" Member="table_studentFiles" ThisKey="student_ID" OtherKey="student_ID" Type="table_studentFile" />
     </Type>
   </Table>
+  <Function Name="dbo.uspRetrieveStudentFiles" Method="uspRetrieveStudentFiles">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <ElementType Name="uspRetrieveStudentFilesResult">
+      <Column Name="fileID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fileName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fileType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fileRecordType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fileLocation" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspRetrieveStudentRecords" Method="uspRetrieveStudentRecords">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <ElementType Name="uspRetrieveStudentRecordsResult">
+      <Column Name="studentID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="studentFName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentMName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentLName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentEmail" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentPhoneNum" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

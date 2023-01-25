@@ -105,6 +105,20 @@ namespace student_health_records_system
 				return this.GetTable<table_studentInfo>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspRetrieveStudentFiles")]
+		public ISingleResult<uspRetrieveStudentFilesResult> uspRetrieveStudentFiles([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(9)")] string studentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID);
+			return ((ISingleResult<uspRetrieveStudentFilesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspRetrieveStudentRecords")]
+		public ISingleResult<uspRetrieveStudentRecordsResult> uspRetrieveStudentRecords([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(9)")] string studentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID);
+			return ((ISingleResult<uspRetrieveStudentRecordsResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.table_activityLogs")]
@@ -1231,6 +1245,220 @@ namespace student_health_records_system
 		{
 			this.SendPropertyChanging();
 			entity.table_studentInfo = null;
+		}
+	}
+	
+	public partial class uspRetrieveStudentFilesResult
+	{
+		
+		private string _fileID;
+		
+		private string _fileName;
+		
+		private string _fileType;
+		
+		private string _fileRecordType;
+		
+		private string _fileLocation;
+		
+		public uspRetrieveStudentFilesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileID", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string fileID
+		{
+			get
+			{
+				return this._fileID;
+			}
+			set
+			{
+				if ((this._fileID != value))
+				{
+					this._fileID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string fileName
+		{
+			get
+			{
+				return this._fileName;
+			}
+			set
+			{
+				if ((this._fileName != value))
+				{
+					this._fileName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileType", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string fileType
+		{
+			get
+			{
+				return this._fileType;
+			}
+			set
+			{
+				if ((this._fileType != value))
+				{
+					this._fileType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileRecordType", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string fileRecordType
+		{
+			get
+			{
+				return this._fileRecordType;
+			}
+			set
+			{
+				if ((this._fileRecordType != value))
+				{
+					this._fileRecordType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileLocation", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string fileLocation
+		{
+			get
+			{
+				return this._fileLocation;
+			}
+			set
+			{
+				if ((this._fileLocation != value))
+				{
+					this._fileLocation = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspRetrieveStudentRecordsResult
+	{
+		
+		private string _studentID;
+		
+		private string _studentFName;
+		
+		private string _studentMName;
+		
+		private string _studentLName;
+		
+		private string _studentEmail;
+		
+		private string _studentPhoneNum;
+		
+		public uspRetrieveStudentRecordsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentID", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string studentID
+		{
+			get
+			{
+				return this._studentID;
+			}
+			set
+			{
+				if ((this._studentID != value))
+				{
+					this._studentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentFName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string studentFName
+		{
+			get
+			{
+				return this._studentFName;
+			}
+			set
+			{
+				if ((this._studentFName != value))
+				{
+					this._studentFName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentMName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string studentMName
+		{
+			get
+			{
+				return this._studentMName;
+			}
+			set
+			{
+				if ((this._studentMName != value))
+				{
+					this._studentMName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentLName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string studentLName
+		{
+			get
+			{
+				return this._studentLName;
+			}
+			set
+			{
+				if ((this._studentLName != value))
+				{
+					this._studentLName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentEmail", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string studentEmail
+		{
+			get
+			{
+				return this._studentEmail;
+			}
+			set
+			{
+				if ((this._studentEmail != value))
+				{
+					this._studentEmail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentPhoneNum", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string studentPhoneNum
+		{
+			get
+			{
+				return this._studentPhoneNum;
+			}
+			set
+			{
+				if ((this._studentPhoneNum != value))
+				{
+					this._studentPhoneNum = value;
+				}
+			}
 		}
 	}
 }
