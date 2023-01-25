@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:student_health_records_system"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="mainGrid">
+        <TextBox x:Name="adminUsernameTbx" HorizontalAlignment="Left" Margin="22,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <PasswordBox x:Name="adminPasswordPbx" HorizontalAlignment="Left" Margin="22,67,0,0" VerticalAlignment="Top" Width="199"/>
+        <Button x:Name="loginBtn" Content="Log In" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Width="52" Click="loginBtn_Click"/>
+        <TextBox x:Name="adminIDTbx" HorizontalAlignment="Left" Margin="452,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminFNameTbx" HorizontalAlignment="Left" Margin="452,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminMNameTbx" HorizontalAlignment="Left" Margin="452,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminLNameTbx" HorizontalAlignment="Left" Margin="452,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminUNameTbx" HorizontalAlignment="Left" Margin="452,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="adminPWordPbx" HorizontalAlignment="Left" Margin="452,190,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminEmailTbx" HorizontalAlignment="Left" Margin="452,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminPhoneNumTbx" HorizontalAlignment="Left" Margin="452,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="adminDeptCbx" HorizontalAlignment="Left" Margin="452,295,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="adminAccessCbx" HorizontalAlignment="Left" Margin="452,332,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="registerBtn" Content="Register Admin" HorizontalAlignment="Left" Margin="470,381,0,0" VerticalAlignment="Top" Click="registerBtn_Click"/>
+        <Button x:Name="logoutBtn" Content="Log Out" HorizontalAlignment="Left" Margin="22,179,0,0" VerticalAlignment="Top" Click="logoutBtn_Click"/>
+
+
+
     </Grid>
 </Window>

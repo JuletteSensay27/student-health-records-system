@@ -75,4 +75,66 @@
       <Column Name="studentPhoneNum" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.uspGetAdminUsernames" Method="uspGetAdminUsernames">
+    <ElementType Name="uspGetAdminUsernamesResult">
+      <Column Name="adminUsername" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspGetAdminIDs" Method="uspGetAdminIDs">
+    <ElementType Name="uspGetAdminIDsResult">
+      <Column Name="admin_ID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspRegisterAdmin" Method="uspRegisterAdmin">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="adminFName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminMName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminLName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminUName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPWord" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPhoneNum" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="adminEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminDept" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="adminAccess" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspGetAdminCredentials" Method="uspGetAdminCredentials">
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="uspGetAdminCredentialsResult">
+      <Column Name="adminUsername" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adminPassword" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adminAccess" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="adminStatus" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspUpdateAccountStatusLogIn" Method="uspUpdateAccountStatusLogIn">
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspUpdateAccountStatusLogOut" Method="uspUpdateAccountStatusLogOut">
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspUpdateAdmin" Method="uspUpdateAdmin">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="adminFName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminMName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminLName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminUName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPWord" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPhoneNum" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="adminEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminDept" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="adminAccess" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="adminStatus" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspDeleteAccount" Method="uspDeleteAccount">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
