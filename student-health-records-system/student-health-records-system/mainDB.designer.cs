@@ -162,17 +162,17 @@ namespace student_health_records_system
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspUpdateAdmin")]
-		public int uspUpdateAdmin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminFName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminMName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminLName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminPWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string adminPhoneNum, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(2)")] string adminDept, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminAccess, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateCreated, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateModified)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminFName, adminMName, adminLName, adminUName, adminPWord, adminPhoneNum, adminEmail, adminDept, adminAccess, adminStatus, dateCreated, dateModified);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspDeleteAccount")]
 		public int uspDeleteAccount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspUpdateAdmin")]
+		public int uspUpdateAdmin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminFName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminMName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminLName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminPWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string adminPhoneNum, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(2)")] string adminDept, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminAccess, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateCreated, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateModified)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminFName, adminMName, adminLName, adminUName, adminPWord, adminPhoneNum, adminEmail, adminDept, adminAccess, adminStatus, dateCreated, dateModified);
 			return ((int)(result.ReturnValue));
 		}
 	}

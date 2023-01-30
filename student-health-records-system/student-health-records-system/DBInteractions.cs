@@ -11,7 +11,7 @@ namespace student_health_records_system
     {
         private DataClasses1DataContext dbconn = new DataClasses1DataContext(Properties.Settings.Default.Student_Health_Record_SystemConnectionString);
 
-        public Dictionary<string, string> displayStudentRecords(string studentID) 
+        public Dictionary<string, string> getStudentRecords(string studentID) 
         {
             Dictionary<string,string> recordsCont = new Dictionary<string, string>();
 
@@ -27,7 +27,7 @@ namespace student_health_records_system
             return recordsCont;
         }
 
-        public Dictionary<string, List<string>> displayStudentFiles(string studentID)
+        public Dictionary<string, List<string>> getStudentFiles(string studentID)
         {
             Dictionary<string, List<string>> filesCont = new Dictionary<string, List<string>>();
             List<string> file = new List<string>();
@@ -259,6 +259,47 @@ namespace student_health_records_system
                         errorArray[i] = "Account Added!";
                         break;
                 }
+            }
+
+            return errorArray;
+        }
+
+        public string[] userUpdates(List<Object> userInfo) 
+        {
+            string[] errorArray = new string[2];
+            int invalidCounter = 0;
+
+            var getAdminIDs = dbconn.uspGetAdminIDs().ToList();
+
+            for (int i = 0; i < getAdminIDs.Count; i++) 
+            {
+                if (userInfo.ElementAt(0).ToString() != getAdminIDs.ElementAt(i).admin_ID) 
+                {
+                    invalidCounter++;
+                }
+            }
+
+            if (invalidCounter > getAdminIDs.Count - 1) 
+            {
+                for (int h = 0; h < errorArray.Length; h++)
+                {
+                    switch (h)
+                    {
+                        case 0:
+                            errorArray[h] = "Update Error!";
+                            break;
+                        case 1:
+                            errorArray[h] = "User is not existing!";
+                            break;
+                    }
+                }
+
+                return errorArray;
+            }
+
+            for (int i = 0; i < userInfo.Count; i++) 
+            {
+                
             }
 
             return errorArray;
