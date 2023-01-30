@@ -51,6 +51,44 @@ namespace student_health_records_system
             return filesCont;
         }
 
+        public Dictionary<string, string> getAdminInfo(string adminInfo)
+        {
+            Dictionary<string, string> recordsCont = new Dictionary<string, string>();
+            string[] errorArray = new string[2];
+
+            var getAdminIDs = dbconn.uspGetAdminIDs().ToList();
+
+            List<string> tempAdminIDs = new List<string>();
+
+            for (int i = 0; i < getAdminIDs.Count; i++) 
+            {
+                tempAdminIDs.Add(getAdminIDs.ElementAt(0).admin_ID);
+            }
+
+            if (!tempAdminIDs.Contains(adminInfo)) 
+            {
+                return recordsCont;
+            }
+
+            var result = dbconn.uspGetAdminInfoByID(adminInfo).ToList();
+
+            recordsCont.Add("adminID", result.ElementAt(0).admin_ID);
+            recordsCont.Add("adminFirstName", result.ElementAt(0).admin_firstName);
+            recordsCont.Add("adminMiddleName", result.ElementAt(0).admin_middleName);
+            recordsCont.Add("adminLastName", result.ElementAt(0).admin_lastName);
+            recordsCont.Add("adminUsername", result.ElementAt(0).admin_userName);
+            recordsCont.Add("adminPassword", result.ElementAt(0).admin_password);
+            recordsCont.Add("adminPhoneNum", result.ElementAt(0).admin_phoneNum);
+            recordsCont.Add("adminEmail", result.ElementAt(0).admin_email);
+            recordsCont.Add("adminDepartment", result.ElementAt(0).admin_department);
+            recordsCont.Add("adminAccess", result.ElementAt(0).admin_access);
+            recordsCont.Add("adminStatus", result.ElementAt(0).admin_status);
+            recordsCont.Add("date_created", result.ElementAt(0).date_created.ToString());
+            recordsCont.Add("date_modified", result.ElementAt(0).date_modified.ToString());
+
+            return recordsCont;
+        }
+
         public string[] userLogin(string userName, string userPassword)  
         {
             string[] errorArray = new string[2];

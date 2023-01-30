@@ -189,6 +189,13 @@ namespace student_health_records_system
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminFName, adminMName, adminLName, adminUName, adminPWord, adminPhoneNum, adminEmail, adminDept, adminAccess, adminStatus, dateModified);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspGetAdminInfoByID")]
+		public ISingleResult<uspGetAdminInfoByIDResult> uspGetAdminInfoByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID);
+			return ((ISingleResult<uspGetAdminInfoByIDResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.table_activityLogs")]
@@ -1711,6 +1718,248 @@ namespace student_health_records_system
 				if ((this._Column1 != value))
 				{
 					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspGetAdminInfoByIDResult
+	{
+		
+		private string _admin_ID;
+		
+		private string _admin_firstName;
+		
+		private string _admin_middleName;
+		
+		private string _admin_lastName;
+		
+		private string _admin_userName;
+		
+		private string _admin_password;
+		
+		private string _admin_phoneNum;
+		
+		private string _admin_email;
+		
+		private string _admin_department;
+		
+		private string _admin_access;
+		
+		private string _admin_status;
+		
+		private System.DateTime _date_created;
+		
+		private System.DateTime _date_modified;
+		
+		public uspGetAdminInfoByIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_ID", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string admin_ID
+		{
+			get
+			{
+				return this._admin_ID;
+			}
+			set
+			{
+				if ((this._admin_ID != value))
+				{
+					this._admin_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_firstName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string admin_firstName
+		{
+			get
+			{
+				return this._admin_firstName;
+			}
+			set
+			{
+				if ((this._admin_firstName != value))
+				{
+					this._admin_firstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_middleName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string admin_middleName
+		{
+			get
+			{
+				return this._admin_middleName;
+			}
+			set
+			{
+				if ((this._admin_middleName != value))
+				{
+					this._admin_middleName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_lastName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string admin_lastName
+		{
+			get
+			{
+				return this._admin_lastName;
+			}
+			set
+			{
+				if ((this._admin_lastName != value))
+				{
+					this._admin_lastName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_userName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string admin_userName
+		{
+			get
+			{
+				return this._admin_userName;
+			}
+			set
+			{
+				if ((this._admin_userName != value))
+				{
+					this._admin_userName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_password", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string admin_password
+		{
+			get
+			{
+				return this._admin_password;
+			}
+			set
+			{
+				if ((this._admin_password != value))
+				{
+					this._admin_password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_phoneNum", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string admin_phoneNum
+		{
+			get
+			{
+				return this._admin_phoneNum;
+			}
+			set
+			{
+				if ((this._admin_phoneNum != value))
+				{
+					this._admin_phoneNum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string admin_email
+		{
+			get
+			{
+				return this._admin_email;
+			}
+			set
+			{
+				if ((this._admin_email != value))
+				{
+					this._admin_email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_department", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string admin_department
+		{
+			get
+			{
+				return this._admin_department;
+			}
+			set
+			{
+				if ((this._admin_department != value))
+				{
+					this._admin_department = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_access", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
+		public string admin_access
+		{
+			get
+			{
+				return this._admin_access;
+			}
+			set
+			{
+				if ((this._admin_access != value))
+				{
+					this._admin_access = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_status", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
+		public string admin_status
+		{
+			get
+			{
+				return this._admin_status;
+			}
+			set
+			{
+				if ((this._admin_status != value))
+				{
+					this._admin_status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_created", DbType="DateTime NOT NULL")]
+		public System.DateTime date_created
+		{
+			get
+			{
+				return this._date_created;
+			}
+			set
+			{
+				if ((this._date_created != value))
+				{
+					this._date_created = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date_modified", DbType="DateTime NOT NULL")]
+		public System.DateTime date_modified
+		{
+			get
+			{
+				return this._date_modified;
+			}
+			set
+			{
+				if ((this._date_modified != value))
+				{
+					this._date_modified = value;
 				}
 			}
 		}

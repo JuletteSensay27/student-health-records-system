@@ -94,5 +94,29 @@ namespace student_health_records_system
 
             MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
         }
+
+        private void retrieveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string adminID = adminIDTbx.Text;
+            Dictionary<string , string> adminInfo = db.getAdminInfo(adminID);
+
+            if (adminInfo.Count < 1) 
+            {
+                MessageBox.Show("Admin ID is not existing!");
+                return;
+            }
+
+            adminIDTbx.Text = adminInfo.Values.ElementAt(0);
+            adminFNameTbx.Text = adminInfo.Values.ElementAt(1);
+            adminMNameTbx.Text = adminInfo.Values.ElementAt(2);
+            adminLNameTbx.Text = adminInfo.Values.ElementAt(3);
+            adminUNameTbx.Text = adminInfo.Values.ElementAt(4);
+            adminPWordPbx.Password = adminInfo.Values.ElementAt(5);
+            adminPhoneNumTbx.Text = adminInfo.Values.ElementAt(6);
+            adminEmailTbx.Text = adminInfo.Values.ElementAt(7);
+            adminDeptCbx.SelectedItem = adminInfo.Values.ElementAt(8);
+            adminAccessCbx.SelectedItem = adminInfo.Values.ElementAt(9);
+ 
+        }
     }
 }
