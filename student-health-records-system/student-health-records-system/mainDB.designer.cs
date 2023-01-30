@@ -169,10 +169,24 @@ namespace student_health_records_system
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspUpdateAdmin")]
-		public int uspUpdateAdmin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminFName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminMName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminLName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminPWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string adminPhoneNum, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(2)")] string adminDept, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminAccess, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateCreated, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateModified)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspGetAdminUsernameByAdminID")]
+		public ISingleResult<uspGetAdminUsernameByAdminIDResult> uspGetAdminUsernameByAdminID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminFName, adminMName, adminLName, adminUName, adminPWord, adminPhoneNum, adminEmail, adminDept, adminAccess, adminStatus, dateCreated, dateModified);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID);
+			return ((ISingleResult<uspGetAdminUsernameByAdminIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspCheckAdminUsernameExistence")]
+		public ISingleResult<uspCheckAdminUsernameExistenceResult> uspCheckAdminUsernameExistence([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUsername)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminUsername);
+			return ((ISingleResult<uspCheckAdminUsernameExistenceResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspUpdateAdmin")]
+		public int uspUpdateAdmin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminFName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminMName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminLName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminPWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string adminPhoneNum, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(2)")] string adminDept, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminAccess, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateModified)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminFName, adminMName, adminLName, adminUName, adminPWord, adminPhoneNum, adminEmail, adminDept, adminAccess, adminStatus, dateModified);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -1645,6 +1659,58 @@ namespace student_health_records_system
 				if ((this._adminStatus != value))
 				{
 					this._adminStatus = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspGetAdminUsernameByAdminIDResult
+	{
+		
+		private string _admin_userName;
+		
+		public uspGetAdminUsernameByAdminIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_userName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string admin_userName
+		{
+			get
+			{
+				return this._admin_userName;
+			}
+			set
+			{
+				if ((this._admin_userName != value))
+				{
+					this._admin_userName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspCheckAdminUsernameExistenceResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public uspCheckAdminUsernameExistenceResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}

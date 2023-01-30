@@ -297,10 +297,61 @@ namespace student_health_records_system
                 return errorArray;
             }
 
-            for (int i = 0; i < userInfo.Count; i++) 
+            var getCurrentAdminUsername = dbconn.uspGetAdminUsernameByAdminID(userInfo.ElementAt(0).ToString()).Single();
+
+            if (userInfo.ElementAt(4).ToString() != getCurrentAdminUsername.ToString()) 
             {
-                
+                var checkUsernameExistence = dbconn.uspCheckAdminUsernameExistence(userInfo.ElementAt(0).ToString(),
+                                                    userInfo.ElementAt(4).ToString());
+
+                if (int.Parse(checkUsernameExistence.ToString()) > 0) 
+                {
+                    for (int h = 0; h < errorArray.Length; h++)
+                    {
+                        switch (h)
+                        {
+                            case 0:
+                                errorArray[h] = "Update Error!";
+                                break;
+                            case 1:
+                                errorArray[h] = "Username already exists!";
+                                break;
+                        }
+                    }
+
+                    return errorArray;
+                }
             }
+
+            var updateUser = dbconn.uspUpdateAdmin(
+                userInfo.ElementAt(0).ToString(),
+                userInfo.ElementAt(1).ToString(),
+                userInfo.ElementAt(2).ToString(),
+                userInfo.ElementAt(3).ToString(),
+                userInfo.ElementAt(4).ToString(),
+                userInfo.ElementAt(5).ToString(),
+                userInfo.ElementAt(6).ToString(),
+                userInfo.ElementAt(7).ToString(),
+                userInfo.ElementAt(8).ToString(),
+                userInfo.ElementAt(9).ToString(),
+                userInfo.ElementAt(10).ToString(),
+                DateTime.Parse(userInfo.ElementAt(11).ToString())
+                );
+
+
+            for (int h = 0; h < errorArray.Length; h++)
+            {
+                switch (h)
+                {
+                    case 0:
+                        errorArray[h] = "Update Complete!";
+                        break;
+                    case 1:
+                        errorArray[h] = "Updated Admin Information!";
+                        break;
+                }
+            }
+
 
             return errorArray;
         }

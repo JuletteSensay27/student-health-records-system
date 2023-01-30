@@ -117,6 +117,23 @@
     <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.uspDeleteAccount" Method="uspDeleteAccount">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspGetAdminUsernameByAdminID" Method="uspGetAdminUsernameByAdminID">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="uspGetAdminUsernameByAdminIDResult">
+      <Column Name="admin_userName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspCheckAdminUsernameExistence" Method="uspCheckAdminUsernameExistence">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="uspCheckAdminUsernameExistenceResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.uspUpdateAdmin" Method="uspUpdateAdmin">
     <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="adminFName" Type="System.String" DbType="VarChar(100)" />
@@ -129,12 +146,7 @@
     <Parameter Name="adminDept" Type="System.String" DbType="VarChar(2)" />
     <Parameter Name="adminAccess" Type="System.String" DbType="VarChar(3)" />
     <Parameter Name="adminStatus" Type="System.String" DbType="VarChar(3)" />
-    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.uspDeleteAccount" Method="uspDeleteAccount">
-    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
