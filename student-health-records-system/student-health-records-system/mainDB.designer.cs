@@ -189,18 +189,25 @@ namespace student_health_records_system
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspAddStudentFiles")]
-		public int uspAddStudentFiles([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(9)")] string studentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string stuFileID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string stuFileName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string stuFileType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string stuFileRecordType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(255)")] string stuFileLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateCreated, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateModified)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID, stuFileID, stuFileName, stuFileType, stuFileRecordType, stuFileLocation, dateCreated, dateModified);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspGetStudentCount")]
 		public ISingleResult<uspGetStudentCountResult> uspGetStudentCount()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<uspGetStudentCountResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getAllFileCountOfStudentByID")]
+		public ISingleResult<getAllFileCountOfStudentByIDResult> getAllFileCountOfStudentByID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(9)")] string studentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID);
+			return ((ISingleResult<getAllFileCountOfStudentByIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspAddStudentFiles")]
+		public int uspAddStudentFiles([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(9)")] string studentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string stuFileID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string stuFileName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string stuFileType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(255)")] string stuFileLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateCreated, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateModified)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID, stuFileID, stuFileName, stuFileType, stuFileLocation, dateCreated, dateModified);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -983,6 +990,32 @@ namespace student_health_records_system
 		private System.Nullable<int> _Column1;
 		
 		public uspGetStudentCountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class getAllFileCountOfStudentByIDResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public getAllFileCountOfStudentByIDResult()
 		{
 		}
 		

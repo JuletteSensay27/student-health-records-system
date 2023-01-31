@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -25,8 +26,8 @@ namespace student_health_records_system
     {
 
         private DBInteractions db = new DBInteractions();
-        
-        
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace student_health_records_system
             setStudentID();
         }
 
-       
+
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -55,7 +56,7 @@ namespace student_health_records_system
             message = db.userLogin(userName, userPassword);
 
             MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
-            
+
         }
 
         private void registerBtn_Click(object sender, RoutedEventArgs e)
@@ -66,7 +67,7 @@ namespace student_health_records_system
             string[] message = new string[2];
 
             adminInfo.Add(adminIDTbx.Text);
-           
+
             adminInfo.Add(adminFNameTbx.Text);
             adminInfo.Add(adminMNameTbx.Text);
             adminInfo.Add(adminLNameTbx.Text);
@@ -79,7 +80,7 @@ namespace student_health_records_system
             adminInfo.Add(dateCreated);
             adminInfo.Add(dateModified);
 
-            if (adminInfo.Contains(null)) 
+            if (adminInfo.Contains(null))
             {
                 MessageBox.Show("All fields are required!");
                 return;
@@ -96,7 +97,7 @@ namespace student_health_records_system
             string userName = string.Empty;
             string[] message = new string[2];
             userName = adminUsernameTbx.Text;
-         
+
             message = db.userLogout(userName);
 
             MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
@@ -105,15 +106,15 @@ namespace student_health_records_system
         private void retrieveBtn_Click(object sender, RoutedEventArgs e)
         {
             string adminID = adminIDTbx.Text;
-            Dictionary<string , string> adminInfo = db.getAdminInfo(adminID);
+            Dictionary<string, string> adminInfo = db.getAdminInfo(adminID);
 
-            if (adminInfo.Count < 1) 
+            if (adminInfo.Count < 1)
             {
                 MessageBox.Show("Admin ID is not existing!");
                 return;
             }
-            
-            
+
+
 
             adminIDTbx.Text = adminInfo.Values.ElementAt(0);
             adminFNameTbx.Text = adminInfo.Values.ElementAt(1);
@@ -126,7 +127,7 @@ namespace student_health_records_system
             adminDeptCbx.SelectedItem = adminInfo.Values.ElementAt(8);
             adminAccessCbx.SelectedItem = adminInfo.Values.ElementAt(9);
             adminStatusTbx.Text = adminInfo.Values.ElementAt(10);
- 
+
         }
 
         private void updateAdminBtn_Click(object sender, RoutedEventArgs e)
@@ -194,7 +195,7 @@ namespace student_health_records_system
             vwAdminIDandNameViewSource.View.MoveCurrentToFirst();
         }
 
-        private void setStudentID() 
+        private void setStudentID()
         {
             string studentCount = db.getStudentCount();
 
@@ -205,11 +206,12 @@ namespace student_health_records_system
 
         private void registerStudentBtn_Click(object sender, RoutedEventArgs e)
         {
-            DateTime dateCreated= DateTime.Now;
+            DateTime dateCreated = DateTime.Now;
             DateTime dateModified = DateTime.Now;
             string[] message = new string[2];
+            List<List<Object>> studentFiles = new List<List<Object>>(){};
 
-            List<Object> studentInfo = new List<Object>() 
+            List<Object> studentInfo = new List<Object>()
             {
                   studentIDTbx.Text,
                   studentFNameTbx.Text,
@@ -224,15 +226,47 @@ namespace student_health_records_system
                   dateModified
             };
 
-            if (studentInfo.Contains(null)) 
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect= true;
+            ofd.Filter = "PDF Files (*.pdf) | *.pdf";
+
+            if ((bool)ofd.ShowDialog()) 
+            {
+                for (int i = 0; i < ofd.FileNames.Length; i++) 
+                {
+                    List<Object> temp = new List<Object>();
+                    temp.Add(ofd.SafeFileNames[i].ToString());
+                    temp.Add("PDF");
+                    temp.Add(ofd.FileNames[i]);
+                    temp.Add(dateCreated); 
+                    temp.Add(dateModified);
+                    studentFiles.Add(temp); 
+                    
+                }
+            }
+
+           
+
+            if (studentInfo.Contains(null))
             {
                 MessageBox.Show("Please Fill All Fields!");
                 return;
             }
 
-            message = db.studentRegister(studentInfo);
+            message = db.studentRegister(studentInfo, studentFiles);
 
             MessageBox.Show($"Status: {message[0]}\nMessage: {message[1]}");
+
+            setStudentID();
+        }
+
+       
+        
+
+        private void sampleFileUpload1_Click(object sender, RoutedEventArgs e)
+        {
+        
+
         }
     }
 }

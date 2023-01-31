@@ -470,7 +470,7 @@ namespace student_health_records_system
             return errorArray;
         }
 
-        public string[] studentRegister(List<Object> studentInfo) 
+        public string[] studentRegister(List<Object> studentInfo, List<List<Object>> studentFiles) 
         {
             string[] errorArray = new string[2];
             string[] errorMessage = new string[2];
@@ -534,6 +534,26 @@ namespace student_health_records_system
                     DateTime.Parse(studentInfo.ElementAt(10).ToString())
                 );
 
+            int fileAddResult = studentFilesAdd(studentFiles, actualStudentID);
+
+            if (fileAddResult != 0) 
+            {
+                for (int h = 0; h < errorArray.Length; h++)
+                {
+                    switch (h)
+                    {
+                        case 0:
+                            errorArray[h] = "File Registration Failed!";
+                            break;
+                        case 1:
+                            errorArray[h] = "Files cannot be added!";
+                            break;
+                    }
+                }
+
+                return errorArray;
+            }
+
             for (int h = 0; h < errorArray.Length; h++)
             {
                 switch (h)
@@ -549,6 +569,32 @@ namespace student_health_records_system
 
             return errorArray;
 
+        }
+
+        private int studentFilesAdd(List<List<Object>> studentFiles, string actualStudentID) 
+        {
+            int result = 0;
+            int fileCounter = 0;
+
+            for (int i = 0; i < studentFiles.Count(); i++) 
+            {
+                string fileID = $"{fileCounter+1}F{actualStudentID}";
+
+                    dbconn.uspAddStudentFiles(
+                            actualStudentID,
+                            fileID,
+                            studentFiles.ElementAt(i).ElementAt(0).ToString(),
+                            studentFiles.ElementAt(i).ElementAt(1).ToString(),                   
+                            studentFiles.ElementAt(i).ElementAt(2).ToString(),
+                            DateTime.Parse(studentFiles.ElementAt(i).ElementAt(3).ToString()),
+                            DateTime.Parse(studentFiles.ElementAt(i).ElementAt(4).ToString())
+                        );
+              
+
+                fileCounter++;
+            }
+
+            return result;
         }
 
         public string getStudentCount() 

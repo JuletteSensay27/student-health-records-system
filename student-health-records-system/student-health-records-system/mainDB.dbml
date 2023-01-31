@@ -149,20 +149,25 @@
     <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.uspAddStudentFiles" Method="uspAddStudentFiles">
-    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
-    <Parameter Name="stuFileID" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="stuFileName" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="stuFileType" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="stuFileRecordType" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="stuFileLocation" Type="System.String" DbType="VarChar(255)" />
-    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.uspGetStudentCount" Method="uspGetStudentCount">
     <ElementType Name="uspGetStudentCountResult">
       <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.getAllFileCountOfStudentByID" Method="getAllFileCountOfStudentByID">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <ElementType Name="getAllFileCountOfStudentByIDResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspAddStudentFiles" Method="uspAddStudentFiles">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <Parameter Name="stuFileID" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="stuFileName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="stuFileType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="stuFileLocation" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

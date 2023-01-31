@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:student_health_records_system"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1207" Loaded="Window_Loaded">
+        Title="MainWindow" Height="565" Width="1207" Loaded="Window_Loaded">
     <Window.Resources>
         <local:Student_Health_Record_SystemDataSet x:Key="student_Health_Record_SystemDataSet"/>
         <CollectionViewSource x:Key="table_studentInfoViewSource" Source="{Binding table_studentInfo, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
@@ -50,8 +50,10 @@
         <TextBox x:Name="studentPNumTbx" HorizontalAlignment="Left" Margin="958,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="studentEmailTbx" HorizontalAlignment="Left" Margin="958,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="studentGenderCbx" HorizontalAlignment="Left" Margin="942,160,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="studentGenderBDate" HorizontalAlignment="Left" Margin="942,0,0,0" VerticalAlignment="Center"/>
-        <Button x:Name="registerStudentBtn" Content="Register Student" HorizontalAlignment="Left" Margin="820,365,0,0" VerticalAlignment="Top" Click="registerStudentBtn_Click"/>
+        <DatePicker x:Name="studentGenderBDate" HorizontalAlignment="Left" Margin="946,203,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="registerStudentBtn" Content="Register Student" HorizontalAlignment="Left" Margin="814,457,0,0" VerticalAlignment="Top" Click="registerStudentBtn_Click"/>
+        <Button x:Name="sampleFileUpload1" Content="Upload Health File 1" HorizontalAlignment="Left" Margin="876,374,0,0" VerticalAlignment="Top" Width="140" Click="sampleFileUpload1_Click"/>
+        <Button x:Name="sampleFileUpload2" Content="Upload Health File 2" HorizontalAlignment="Left" Margin="876,399,0,0" VerticalAlignment="Top" Width="140"/>
 
 
 
