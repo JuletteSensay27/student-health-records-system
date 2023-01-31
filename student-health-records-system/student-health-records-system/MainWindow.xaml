@@ -33,13 +33,25 @@
         <Button x:Name="retrieveBtn" Content="Retrieve Info" HorizontalAlignment="Left" Margin="587,389,0,0" VerticalAlignment="Top" Click="retrieveBtn_Click"/>
         <TextBox x:Name="adminStatusTbx" HorizontalAlignment="Left" Margin="538,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="deleteBtn" Content="Delete Account" HorizontalAlignment="Left" Margin="269,389,0,0" VerticalAlignment="Top" Click="deleteBtn_Click"/>
-        <DataGrid x:Name="vwAdminIDandNameDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource vwAdminIDandNameViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="725,147,82,87" SelectionChanged="vwAdminIDandNameDataGrid_SelectionChanged" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="admin_IDColumn" Binding="{Binding Admin ID}" Header="Admin ID" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="admin_NameColumn" Binding="{Binding Admin Name}" Header="Admin Name" IsReadOnly="True" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="admin_UsernameColumn" Binding="{Binding Admin Username}" Header="Admin Username" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Label x:Name="rndLbl" Content="Student ID: " HorizontalAlignment="Left" Margin="810,34,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="studentIDTbx" IsReadOnly="True" HorizontalAlignment="Left" Margin="887,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="rndLbl_Copy" Content="Student First Name: " HorizontalAlignment="Left" Margin="810,71,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rndLbl_Copy1" Content="Student Middle Name: " HorizontalAlignment="Left" Margin="810,101,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rndLbl_Copy2" Content="Student Last Name: " HorizontalAlignment="Left" Margin="810,127,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rndLbl_Copy3" Content="Student Gender: " HorizontalAlignment="Left" Margin="810,153,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rndLbl_Copy4" Content="Student Birthdate: " HorizontalAlignment="Left" Margin="812,199,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rndLbl_Copy5" Content="Student Age: " HorizontalAlignment="Left" Margin="812,246,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rndLbl_Copy6" Content="Student Phone Number: " HorizontalAlignment="Left" Margin="812,276,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="rndLbl_Copy7" Content="Student Email: " HorizontalAlignment="Left" Margin="812,306,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="studentFNameTbx" HorizontalAlignment="Left" Margin="932,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="studentMNameTbx" HorizontalAlignment="Left" Margin="942,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="studentLNameTbx" HorizontalAlignment="Left" Margin="942,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="studentAgeTbx" HorizontalAlignment="Left" Margin="949,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="studentPNumTbx" HorizontalAlignment="Left" Margin="958,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="studentEmailTbx" HorizontalAlignment="Left" Margin="958,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="studentGenderCbx" HorizontalAlignment="Left" Margin="942,160,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="studentGenderBDate" HorizontalAlignment="Left" Margin="942,0,0,0" VerticalAlignment="Center"/>
+        <Button x:Name="registerStudentBtn" Content="Register Student" HorizontalAlignment="Left" Margin="820,365,0,0" VerticalAlignment="Top" Click="registerStudentBtn_Click"/>
 
 
 

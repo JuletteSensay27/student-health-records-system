@@ -160,4 +160,9 @@
     <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.uspGetStudentCount" Method="uspGetStudentCount">
+    <ElementType Name="uspGetStudentCountResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

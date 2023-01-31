@@ -56,7 +56,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="dbTables.cs" />
     <Compile Include="studentDataViewer.xaml.cs">
       <DependentUpon>studentDataViewer.xaml</DependentUpon>
     </Compile>

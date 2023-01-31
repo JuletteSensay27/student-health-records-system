@@ -195,6 +195,13 @@ namespace student_health_records_system
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID, stuFileID, stuFileName, stuFileType, stuFileRecordType, stuFileLocation, dateCreated, dateModified);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspGetStudentCount")]
+		public ISingleResult<uspGetStudentCountResult> uspGetStudentCount()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<uspGetStudentCountResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwAdminIDandName")]
@@ -965,6 +972,32 @@ namespace student_health_records_system
 				if ((this._adminID != value))
 				{
 					this._adminID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspGetStudentCountResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public uspGetStudentCountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}

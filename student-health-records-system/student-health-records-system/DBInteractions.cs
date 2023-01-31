@@ -473,28 +473,27 @@ namespace student_health_records_system
         public string[] studentRegister(List<Object> studentInfo) 
         {
             string[] errorArray = new string[2];
-            int year = new DateTime().Year;
             string[] errorMessage = new string[2];
             string actualStudentID = string.Empty;
 
             if (int.Parse(studentInfo.ElementAt(0).ToString()) < 10) 
             {
-                actualStudentID = $"S{year}000{studentInfo.ElementAt(0).ToString()}";
+                actualStudentID = $"S{DateTime.Now.Year}000{studentInfo.ElementAt(0).ToString()}";
             }
 
             if (int.Parse(studentInfo.ElementAt(0).ToString()) > 10 && int.Parse(studentInfo.ElementAt(0).ToString()) < 100) 
             {
-                actualStudentID = $"S{year}00{studentInfo.ElementAt(0).ToString()}";
+                actualStudentID = $"S{DateTime.Now.Year}00{studentInfo.ElementAt(0).ToString()}";
             }
 
             if (int.Parse(studentInfo.ElementAt(0).ToString()) > 100 && int.Parse(studentInfo.ElementAt(0).ToString()) < 1000) 
             {
-                actualStudentID = $"S{year}0{studentInfo.ElementAt(0).ToString()}";
+                actualStudentID = $"S{DateTime.Now.Year}0{studentInfo.ElementAt(0).ToString()}";
             }
 
             if (int.Parse(studentInfo.ElementAt(0).ToString()) > 1000 && int.Parse(studentInfo.ElementAt(0).ToString()) < 10000)
             {
-                actualStudentID = $"S{year}{studentInfo.ElementAt(0).ToString()}";
+                actualStudentID = $"S{DateTime.Now.Year}{studentInfo.ElementAt(0).ToString()}";
             }
 
             var getAllStudentIDs = dbconn.uspGetAllStudentIDs().ToList();
@@ -522,7 +521,7 @@ namespace student_health_records_system
 
             dbconn.uspAddStudent
                 (
-                    studentInfo.ElementAt(0).ToString(),
+                    actualStudentID,
                     studentInfo.ElementAt(1).ToString(),
                     studentInfo.ElementAt(2).ToString(),
                     studentInfo.ElementAt(3).ToString(),
@@ -550,6 +549,13 @@ namespace student_health_records_system
 
             return errorArray;
 
+        }
+
+        public string getStudentCount() 
+        {
+            var studentCount = dbconn.uspGetStudentCount().Single().Column1.Value;
+
+            return studentCount.ToString();
         }
 
     }

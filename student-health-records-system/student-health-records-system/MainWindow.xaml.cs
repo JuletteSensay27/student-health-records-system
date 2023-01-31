@@ -35,8 +35,10 @@ namespace student_health_records_system
             adminDeptCbx.Items.Add("CL");
             adminAccessCbx.Items.Add("IAD");
             adminAccessCbx.Items.Add("NAD");
+            studentGenderCbx.Items.Add("M");
+            studentGenderCbx.Items.Add("F");
 
-          
+            setStudentID();
         }
 
        
@@ -192,6 +194,45 @@ namespace student_health_records_system
             vwAdminIDandNameViewSource.View.MoveCurrentToFirst();
         }
 
-      
+        private void setStudentID() 
+        {
+            string studentCount = db.getStudentCount();
+
+            int newID = int.Parse(studentCount.ToString()) + 1;
+
+            studentIDTbx.Text = newID.ToString();
+        }
+
+        private void registerStudentBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime dateCreated= DateTime.Now;
+            DateTime dateModified = DateTime.Now;
+            string[] message = new string[2];
+
+            List<Object> studentInfo = new List<Object>() 
+            {
+                  studentIDTbx.Text,
+                  studentFNameTbx.Text,
+                  studentMNameTbx.Text,
+                  studentLNameTbx.Text,
+                  studentGenderCbx.SelectedItem,
+                  studentGenderBDate.SelectedDate,
+                  studentAgeTbx.Text,
+                  studentPNumTbx.Text,
+                  studentEmailTbx.Text,
+                  dateCreated,
+                  dateModified
+            };
+
+            if (studentInfo.Contains(null)) 
+            {
+                MessageBox.Show("Please Fill All Fields!");
+                return;
+            }
+
+            message = db.studentRegister(studentInfo);
+
+            MessageBox.Show($"Status: {message[0]}\nMessage: {message[1]}");
+        }
     }
 }
