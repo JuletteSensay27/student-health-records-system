@@ -5,27 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:student_health_records_system"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="mainGrid">
+        Title="MainWindow" Height="450" Width="1207" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Student_Health_Record_SystemDataSet x:Key="student_Health_Record_SystemDataSet"/>
+        <CollectionViewSource x:Key="table_studentInfoViewSource" Source="{Binding table_studentInfo, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+        <CollectionViewSource x:Key="table_adminAccountsViewSource" Source="{Binding table_adminAccounts, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+        <CollectionViewSource x:Key="table_activityLogsViewSource" Source="{Binding table_activityLogs, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+        <CollectionViewSource x:Key="vwAdminIDandNameViewSource" Source="{Binding vwAdminIDandName, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+    </Window.Resources>
+    <Grid x:Name="mainGrid" DataContext="{StaticResource table_studentInfoViewSource}">
         <TextBox x:Name="adminUsernameTbx" HorizontalAlignment="Left" Margin="22,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
         <PasswordBox x:Name="adminPasswordPbx" HorizontalAlignment="Left" Margin="22,67,0,0" VerticalAlignment="Top" Width="199"/>
         <Button x:Name="loginBtn" Content="Log In" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Width="52" Click="loginBtn_Click"/>
-        <TextBox x:Name="adminIDTbx" HorizontalAlignment="Left" Margin="452,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminFNameTbx" HorizontalAlignment="Left" Margin="452,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminMNameTbx" HorizontalAlignment="Left" Margin="452,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminLNameTbx" HorizontalAlignment="Left" Margin="452,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminUNameTbx" HorizontalAlignment="Left" Margin="452,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="adminPWordPbx" HorizontalAlignment="Left" Margin="452,190,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminEmailTbx" HorizontalAlignment="Left" Margin="452,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminPhoneNumTbx" HorizontalAlignment="Left" Margin="452,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="adminDeptCbx" HorizontalAlignment="Left" Margin="452,295,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="adminAccessCbx" HorizontalAlignment="Left" Margin="452,332,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="registerBtn" Content="Register Admin" HorizontalAlignment="Left" Margin="427,385,0,0" VerticalAlignment="Top" Click="registerBtn_Click"/>
+        <TextBox x:Name="adminIDTbx" HorizontalAlignment="Left" Margin="406,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminFNameTbx" HorizontalAlignment="Left" Margin="406,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminMNameTbx" HorizontalAlignment="Left" Margin="406,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminLNameTbx" HorizontalAlignment="Left" Margin="406,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminUNameTbx" HorizontalAlignment="Left" Margin="406,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="adminPWordPbx" HorizontalAlignment="Left" Margin="406,194,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminEmailTbx" HorizontalAlignment="Left" Margin="406,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="adminPhoneNumTbx" HorizontalAlignment="Left" Margin="406,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="adminDeptCbx" HorizontalAlignment="Left" Margin="406,299,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="adminAccessCbx" HorizontalAlignment="Left" Margin="406,336,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="registerBtn" Content="Register Admin" HorizontalAlignment="Left" Margin="381,389,0,0" VerticalAlignment="Top" Click="registerBtn_Click"/>
         <Button x:Name="logoutBtn" Content="Log Out" HorizontalAlignment="Left" Margin="22,179,0,0" VerticalAlignment="Top" Click="logoutBtn_Click"/>
-        <Button x:Name="updateAdminBtn" Content="Update Admin" HorizontalAlignment="Left" Margin="532,385,0,0" VerticalAlignment="Top" Click="updateAdminBtn_Click"/>
-        <Button x:Name="retrieveBtn" Content="Retrieve Info" HorizontalAlignment="Left" Margin="633,385,0,0" VerticalAlignment="Top" Click="retrieveBtn_Click"/>
-        <TextBox x:Name="adminStatusTbx" HorizontalAlignment="Left" Margin="584,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="deleteBtn" Content="Delete Account" HorizontalAlignment="Left" Margin="315,385,0,0" VerticalAlignment="Top" Click="deleteBtn_Click"/>
+        <Button x:Name="updateAdminBtn" Content="Update Admin" HorizontalAlignment="Left" Margin="486,389,0,0" VerticalAlignment="Top" Click="updateAdminBtn_Click"/>
+        <Button x:Name="retrieveBtn" Content="Retrieve Info" HorizontalAlignment="Left" Margin="587,389,0,0" VerticalAlignment="Top" Click="retrieveBtn_Click"/>
+        <TextBox x:Name="adminStatusTbx" HorizontalAlignment="Left" Margin="538,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="deleteBtn" Content="Delete Account" HorizontalAlignment="Left" Margin="269,389,0,0" VerticalAlignment="Top" Click="deleteBtn_Click"/>
+        <DataGrid x:Name="vwAdminIDandNameDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource vwAdminIDandNameViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="725,147,82,87" SelectionChanged="vwAdminIDandNameDataGrid_SelectionChanged" CanUserResizeRows="False" CanUserDeleteRows="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="admin_IDColumn" Binding="{Binding Admin ID}" Header="Admin ID" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="admin_NameColumn" Binding="{Binding Admin Name}" Header="Admin Name" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="admin_UsernameColumn" Binding="{Binding Admin Username}" Header="Admin Username" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
 
 

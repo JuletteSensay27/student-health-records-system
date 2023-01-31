@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace student_health_records_system
 {
@@ -50,21 +51,7 @@ namespace student_health_records_system
 
             return filesCont;
         }
-
-        public List<string> getAllStudentIDs() 
-        {
-            List<string> studentIDs = new List<string>();
-
-            var result = dbconn.uspGetAllStudentIDs().ToList();
-
-            for (int i = 0; i < result.Count; i++) 
-            {
-                studentIDs.Add(result.ElementAt(i).student_ID);
-            }
-
-            return studentIDs;
-        }
-        
+ 
         public Dictionary<string, string> getAdminInfo(string adminInfo)
         {
             Dictionary<string, string> recordsCont = new Dictionary<string, string>();
@@ -481,6 +468,88 @@ namespace student_health_records_system
             }
 
             return errorArray;
+        }
+
+        public string[] studentRegister(List<Object> studentInfo) 
+        {
+            string[] errorArray = new string[2];
+            int year = new DateTime().Year;
+            string[] errorMessage = new string[2];
+            string actualStudentID = string.Empty;
+
+            if (int.Parse(studentInfo.ElementAt(0).ToString()) < 10) 
+            {
+                actualStudentID = $"S{year}000{studentInfo.ElementAt(0).ToString()}";
+            }
+
+            if (int.Parse(studentInfo.ElementAt(0).ToString()) > 10 && int.Parse(studentInfo.ElementAt(0).ToString()) < 100) 
+            {
+                actualStudentID = $"S{year}00{studentInfo.ElementAt(0).ToString()}";
+            }
+
+            if (int.Parse(studentInfo.ElementAt(0).ToString()) > 100 && int.Parse(studentInfo.ElementAt(0).ToString()) < 1000) 
+            {
+                actualStudentID = $"S{year}0{studentInfo.ElementAt(0).ToString()}";
+            }
+
+            if (int.Parse(studentInfo.ElementAt(0).ToString()) > 1000 && int.Parse(studentInfo.ElementAt(0).ToString()) < 10000)
+            {
+                actualStudentID = $"S{year}{studentInfo.ElementAt(0).ToString()}";
+            }
+
+            var getAllStudentIDs = dbconn.uspGetAllStudentIDs().ToList();
+
+            for (int i = 0; i < getAllStudentIDs.Count; i++) 
+            {
+                if (actualStudentID == getAllStudentIDs.ElementAt(i).student_ID) 
+                {
+                    for (int h = 0; h < errorArray.Length; h++)
+                    {
+                        switch (h)
+                        {
+                            case 0:
+                                errorArray[h] = "Registration Error!";
+                                break;
+                            case 1:
+                                errorArray[h] = "Student Already Existing!";
+                                break;
+                        }
+                    }
+
+                    return errorArray;
+                }
+            }
+
+            dbconn.uspAddStudent
+                (
+                    studentInfo.ElementAt(0).ToString(),
+                    studentInfo.ElementAt(1).ToString(),
+                    studentInfo.ElementAt(2).ToString(),
+                    studentInfo.ElementAt(3).ToString(),
+                    studentInfo.ElementAt(4).ToString(),
+                    DateTime.Parse(studentInfo.ElementAt(5).ToString()),
+                    studentInfo.ElementAt(6).ToString(),
+                    studentInfo.ElementAt(7).ToString(),
+                    studentInfo.ElementAt(8).ToString(),
+                    DateTime.Parse(studentInfo.ElementAt(9).ToString()),
+                    DateTime.Parse(studentInfo.ElementAt(10).ToString())
+                );
+
+            for (int h = 0; h < errorArray.Length; h++)
+            {
+                switch (h)
+                {
+                    case 0:
+                        errorArray[h] = "Registration Success!";
+                        break;
+                    case 1:
+                        errorArray[h] = "Student Added!";
+                        break;
+                }
+            }
+
+            return errorArray;
+
         }
 
     }

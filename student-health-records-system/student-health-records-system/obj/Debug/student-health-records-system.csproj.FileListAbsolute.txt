@@ -16,3 +16,4 @@ C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.pdb
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\studentDataViewer.g.cs
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\studentDataViewer.baml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\GeneratedInternalTypeHelper.g.cs
