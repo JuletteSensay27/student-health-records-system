@@ -171,4 +171,9 @@
     <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.uspGetAllStudentIDs" Method="uspGetAllStudentIDs">
+    <ElementType Name="uspGetAllStudentIDsResult">
+      <Column Name="student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

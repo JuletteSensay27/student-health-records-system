@@ -203,6 +203,13 @@ namespace student_health_records_system
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspGetAllStudentIDs")]
+		public ISingleResult<uspGetAllStudentIDsResult> uspGetAllStudentIDs()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<uspGetAllStudentIDsResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.table_activityLogs")]
@@ -1967,6 +1974,32 @@ namespace student_health_records_system
 				if ((this._admin_ID != value))
 				{
 					this._admin_ID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspGetAllStudentIDsResult
+	{
+		
+		private string _student_ID;
+		
+		public uspGetAllStudentIDsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_student_ID", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string student_ID
+		{
+			get
+			{
+				return this._student_ID;
+			}
+			set
+			{
+				if ((this._student_ID != value))
+				{
+					this._student_ID = value;
 				}
 			}
 		}

@@ -51,8 +51,20 @@ namespace student_health_records_system
             return filesCont;
         }
 
-        
+        public List<string> getAllStudentIDs() 
+        {
+            List<string> studentIDs = new List<string>();
 
+            var result = dbconn.uspGetAllStudentIDs().ToList();
+
+            for (int i = 0; i < result.Count; i++) 
+            {
+                studentIDs.Add(result.ElementAt(i).student_ID);
+            }
+
+            return studentIDs;
+        }
+        
         public Dictionary<string, string> getAdminInfo(string adminInfo)
         {
             Dictionary<string, string> recordsCont = new Dictionary<string, string>();
@@ -407,6 +419,24 @@ namespace student_health_records_system
         public string[] userDelete(string adminID)
         {
             string[] errorArray = new string[2];
+
+            if (adminID == "S0000") 
+            {
+                for (int h = 0; h < errorArray.Length; h++)
+                {
+                    switch (h)
+                    {
+                        case 0:
+                            errorArray[h] = "Deletion Error!";
+                            break;
+                        case 1:
+                            errorArray[h] = "Cannot delete super admin!";
+                            break;
+                    }
+                }
+
+                return errorArray;
+            }
 
             var getAdminIDs = dbconn.uspGetAdminIDs().ToList();
 
