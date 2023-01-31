@@ -20,3 +20,6 @@ C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\LogInWindow.g.cs
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\LogInWindow.baml
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseAdminWindow.g.cs
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseLogsWindow.g.cs
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseAdminWindow.baml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseLogsWindow.baml

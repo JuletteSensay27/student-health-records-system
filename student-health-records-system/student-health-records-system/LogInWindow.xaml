@@ -11,7 +11,7 @@
         <Label x:Name="adminUNameLbl" Content="Admin Username" HorizontalAlignment="Left" Margin="26,67,0,0" VerticalAlignment="Top"/>
         <PasswordBox x:Name="adminPWordPbx" HorizontalAlignment="Left" Margin="141,119,0,0" VerticalAlignment="Top" Width="174"/>
         <Label x:Name="adminPWordLbl" Content="Admin Password" HorizontalAlignment="Left" Margin="26,115,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="loginBtn" Content="Log In" HorizontalAlignment="Left" Margin="228,184,0,0" VerticalAlignment="Top" Width="87"/>
+        <Button x:Name="loginBtn" Content="Log In" HorizontalAlignment="Left" Margin="228,184,0,0" VerticalAlignment="Top" Width="87" Click="loginBtn_Click"/>
 
     </Grid>
 </Window>
