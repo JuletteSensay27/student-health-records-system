@@ -33,8 +33,33 @@ namespace student_health_records_system
         {
             InitializeComponent();
 
-            
+         
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            student_health_records_system.Student_Health_Record_SystemDataSet student_Health_Record_SystemDataSet = ((student_health_records_system.Student_Health_Record_SystemDataSet)(this.FindResource("student_Health_Record_SystemDataSet")));
+            // Load data into the table table_studentInfo. You can modify this code as needed.
+            student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.table_studentInfoTableAdapter student_Health_Record_SystemDataSettable_studentInfoTableAdapter = new student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.table_studentInfoTableAdapter();
+            student_Health_Record_SystemDataSettable_studentInfoTableAdapter.Fill(student_Health_Record_SystemDataSet.table_studentInfo);
+            System.Windows.Data.CollectionViewSource table_studentInfoViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("table_studentInfoViewSource")));
+            table_studentInfoViewSource.View.MoveCurrentToFirst();
+            // Load data into the table table_adminAccounts. You can modify this code as needed.
+            student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.table_adminAccountsTableAdapter student_Health_Record_SystemDataSettable_adminAccountsTableAdapter = new student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.table_adminAccountsTableAdapter();
+            student_Health_Record_SystemDataSettable_adminAccountsTableAdapter.Fill(student_Health_Record_SystemDataSet.table_adminAccounts);
+            System.Windows.Data.CollectionViewSource table_adminAccountsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("table_adminAccountsViewSource")));
+            table_adminAccountsViewSource.View.MoveCurrentToFirst();
+            // Load data into the table table_activityLogs. You can modify this code as needed.
+            student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.table_activityLogsTableAdapter student_Health_Record_SystemDataSettable_activityLogsTableAdapter = new student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.table_activityLogsTableAdapter();
+            student_Health_Record_SystemDataSettable_activityLogsTableAdapter.Fill(student_Health_Record_SystemDataSet.table_activityLogs);
+            System.Windows.Data.CollectionViewSource table_activityLogsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("table_activityLogsViewSource")));
+            table_activityLogsViewSource.View.MoveCurrentToFirst();
+            // Load data into the table vwAdminIDandName. You can modify this code as needed.
+            student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.vwAdminIDandNameTableAdapter student_Health_Record_SystemDataSetvwAdminIDandNameTableAdapter = new student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters.vwAdminIDandNameTableAdapter();
+            student_Health_Record_SystemDataSetvwAdminIDandNameTableAdapter.Fill(student_Health_Record_SystemDataSet.vwAdminIDandName);
+            System.Windows.Data.CollectionViewSource vwAdminIDandNameViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("vwAdminIDandNameViewSource")));
+            vwAdminIDandNameViewSource.View.MoveCurrentToFirst();
+        }
     }
 }
