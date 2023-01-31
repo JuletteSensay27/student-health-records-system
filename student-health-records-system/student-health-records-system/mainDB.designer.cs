@@ -70,6 +70,14 @@ namespace student_health_records_system
 			}
 		}
 		
+		public System.Data.Linq.Table<vwStudentsIDAndName> vwStudentsIDAndNames
+		{
+			get
+			{
+				return this.GetTable<vwStudentsIDAndName>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspRetrieveStudentFiles")]
 		public ISingleResult<uspRetrieveStudentFilesResult> uspRetrieveStudentFiles([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(9)")] string studentID)
 		{
@@ -269,6 +277,51 @@ namespace student_health_records_system
 				if ((this._Admin_Username != value))
 				{
 					this._Admin_Username = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwStudentsIDAndNames")]
+	public partial class vwStudentsIDAndName
+	{
+		
+		private string _Student_ID;
+		
+		private string _Student_Name;
+		
+		public vwStudentsIDAndName()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Student ID]", Storage="_Student_ID", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string Student_ID
+		{
+			get
+			{
+				return this._Student_ID;
+			}
+			set
+			{
+				if ((this._Student_ID != value))
+				{
+					this._Student_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Student Name]", Storage="_Student_Name", DbType="VarChar(303) NOT NULL", CanBeNull=false)]
+		public string Student_Name
+		{
+			get
+			{
+				return this._Student_Name;
+			}
+			set
+			{
+				if ((this._Student_Name != value))
+				{
+					this._Student_Name = value;
 				}
 			}
 		}
