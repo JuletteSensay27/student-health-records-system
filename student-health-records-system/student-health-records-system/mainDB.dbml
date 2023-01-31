@@ -180,6 +180,8 @@
     <ElementType Name="uspGetAllStudentNamesAndIDResult">
       <Column Name="[Student ID]" Member="Student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
       <Column Name="[Student Name]" Member="Student_Name" Type="System.String" DbType="VarChar(303) NOT NULL" CanBeNull="false" />
+      <Column Name="[Date Created]" Member="Date_Created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Date Modified]" Member="Date_Modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

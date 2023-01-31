@@ -1103,6 +1103,10 @@ namespace student_health_records_system
 		
 		private string _Student_Name;
 		
+		private System.DateTime _Date_Created;
+		
+		private System.DateTime _Date_Modified;
+		
 		public uspGetAllStudentNamesAndIDResult()
 		{
 		}
@@ -1135,6 +1139,38 @@ namespace student_health_records_system
 				if ((this._Student_Name != value))
 				{
 					this._Student_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Date Created]", Storage="_Date_Created", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Created
+		{
+			get
+			{
+				return this._Date_Created;
+			}
+			set
+			{
+				if ((this._Date_Created != value))
+				{
+					this._Date_Created = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Date Modified]", Storage="_Date_Modified", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Modified
+		{
+			get
+			{
+				return this._Date_Modified;
+			}
+			set
+			{
+				if ((this._Date_Modified != value))
+				{
+					this._Date_Modified = value;
 				}
 			}
 		}

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:student_health_records_system"
         mc:Ignorable="d"
-        Title="Nurse Admin" Height="450" Width="800">
+        Title="Nurse Admin" Height="450" Width="800" Closed="NurseAdminWindow_Closed">
     <Grid>
         <TextBox x:Name="searchBoxTbx" HorizontalAlignment="Left" Margin="74,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
         <Label x:Name="searchBoxLbl" Content="Search" HorizontalAlignment="Left" Margin="24,47,0,0" VerticalAlignment="Top"/>
