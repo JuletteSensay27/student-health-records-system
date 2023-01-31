@@ -63,7 +63,7 @@ namespace student_health_records_system
             adminInfo.Add(adminFNameTbx.Text);
             adminInfo.Add(adminMNameTbx.Text);
             adminInfo.Add(adminLNameTbx.Text);
-            adminInfo.Add(adminUsernameTbx.Text);
+            adminInfo.Add(adminUNameTbx.Text);
             adminInfo.Add(adminPWordPbx.Password);
             adminInfo.Add(adminPhoneNumTbx.Text);
             adminInfo.Add(adminEmailTbx.Text);
@@ -116,7 +116,47 @@ namespace student_health_records_system
             adminEmailTbx.Text = adminInfo.Values.ElementAt(7);
             adminDeptCbx.SelectedItem = adminInfo.Values.ElementAt(8);
             adminAccessCbx.SelectedItem = adminInfo.Values.ElementAt(9);
+            adminStatusTbx.Text = adminInfo.Values.ElementAt(10);
  
+        }
+
+        private void updateAdminBtn_Click(object sender, RoutedEventArgs e)
+        {
+            List<Object> adminInfo = new List<Object>();
+            DateTime dateModified = DateTime.Now;
+            string[] message = new string[2];
+
+            adminInfo.Add(adminIDTbx.Text);
+            adminInfo.Add(adminFNameTbx.Text);
+            adminInfo.Add(adminMNameTbx.Text);
+            adminInfo.Add(adminLNameTbx.Text);
+            adminInfo.Add(adminUNameTbx.Text);
+            adminInfo.Add(adminPWordPbx.Password);
+            adminInfo.Add(adminPhoneNumTbx.Text);
+            adminInfo.Add(adminEmailTbx.Text);
+            adminInfo.Add(adminDeptCbx.SelectedItem);
+            adminInfo.Add(adminAccessCbx.SelectedItem);
+            adminInfo.Add(adminStatusTbx.Text);
+            adminInfo.Add(dateModified);
+
+            if (adminInfo.Contains(null))
+            {
+                MessageBox.Show("All fields are required!");
+                return;
+            }
+
+            message = db.userUpdates(adminInfo);
+
+            MessageBox.Show($"Status: {message[0]}\nMessage: {message[1]}");
+        }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string adminID = adminIDTbx.Text;
+
+            string[] message = db.userDelete(adminID);
+
+            MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
         }
     }
 }

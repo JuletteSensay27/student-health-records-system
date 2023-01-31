@@ -22,8 +22,10 @@
         <ComboBox x:Name="adminAccessCbx" HorizontalAlignment="Left" Margin="452,332,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="registerBtn" Content="Register Admin" HorizontalAlignment="Left" Margin="427,385,0,0" VerticalAlignment="Top" Click="registerBtn_Click"/>
         <Button x:Name="logoutBtn" Content="Log Out" HorizontalAlignment="Left" Margin="22,179,0,0" VerticalAlignment="Top" Click="logoutBtn_Click"/>
-        <Button x:Name="updateAdminBtn" Content="Update Admin" HorizontalAlignment="Left" Margin="532,385,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="updateAdminBtn" Content="Update Admin" HorizontalAlignment="Left" Margin="532,385,0,0" VerticalAlignment="Top" Click="updateAdminBtn_Click"/>
         <Button x:Name="retrieveBtn" Content="Retrieve Info" HorizontalAlignment="Left" Margin="633,385,0,0" VerticalAlignment="Top" Click="retrieveBtn_Click"/>
+        <TextBox x:Name="adminStatusTbx" HorizontalAlignment="Left" Margin="584,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="deleteBtn" Content="Delete Account" HorizontalAlignment="Left" Margin="315,385,0,0" VerticalAlignment="Top" Click="deleteBtn_Click"/>
 
 
 

@@ -51,6 +51,8 @@ namespace student_health_records_system
             return filesCont;
         }
 
+        
+
         public Dictionary<string, string> getAdminInfo(string adminInfo)
         {
             Dictionary<string, string> recordsCont = new Dictionary<string, string>();
@@ -306,6 +308,7 @@ namespace student_health_records_system
         {
             string[] errorArray = new string[2];
             int invalidCounter = 0;
+            List<string> tempNameHolder = new List<string>();
 
             var getAdminIDs = dbconn.uspGetAdminIDs().ToList();
 
@@ -337,12 +340,19 @@ namespace student_health_records_system
 
             var getCurrentAdminUsername = dbconn.uspGetAdminUsernameByAdminID(userInfo.ElementAt(0).ToString()).Single();
 
-            if (userInfo.ElementAt(4).ToString() != getCurrentAdminUsername.ToString()) 
-            {
-                var checkUsernameExistence = dbconn.uspCheckAdminUsernameExistence(userInfo.ElementAt(0).ToString(),
-                                                    userInfo.ElementAt(4).ToString());
+            var getAllAdminUsernames = dbconn.uspGetAdminUsernames().ToList();
 
-                if (int.Parse(checkUsernameExistence.ToString()) > 0) 
+            for (int i = 0; i < getAllAdminUsernames.Count; i++) 
+            {
+                if (getAllAdminUsernames.ElementAt(i).adminUsername.ToString() != getCurrentAdminUsername.admin_userName.ToString()) 
+                {
+                    tempNameHolder.Add(getAllAdminUsernames.ElementAt(i).adminUsername.ToString());
+                }
+            }
+
+            for (int i = 0; i < tempNameHolder.Count; i++) 
+            {
+                if (userInfo.ElementAt(4).ToString() == tempNameHolder.ElementAt(i)) 
                 {
                     for (int h = 0; h < errorArray.Length; h++)
                     {
@@ -352,7 +362,7 @@ namespace student_health_records_system
                                 errorArray[h] = "Update Error!";
                                 break;
                             case 1:
-                                errorArray[h] = "Username already exists!";
+                                errorArray[h] = "Username Already existing!";
                                 break;
                         }
                     }
@@ -390,6 +400,55 @@ namespace student_health_records_system
                 }
             }
 
+
+            return errorArray;
+        }
+
+        public string[] userDelete(string adminID)
+        {
+            string[] errorArray = new string[2];
+
+            var getAdminIDs = dbconn.uspGetAdminIDs().ToList();
+
+            List<string> tempAdminIDs = new List<string>();
+
+            for (int i = 0; i < getAdminIDs.Count; i++)
+            {
+                tempAdminIDs.Add(getAdminIDs.ElementAt(0).admin_ID);
+            }
+
+            if (!tempAdminIDs.Contains(adminID))
+            {
+                for (int h = 0; h < errorArray.Length; h++)
+                {
+                    switch (h)
+                    {
+                        case 0:
+                            errorArray[h] = "Deletion Error!";
+                            break;
+                        case 1:
+                            errorArray[h] = "Account not Existing!";
+                            break;
+                    }
+                }
+
+                return errorArray;
+            }
+
+            var deleteUser = dbconn.uspDeleteAdminAccount(adminID);
+
+            for (int h = 0; h < errorArray.Length; h++)
+            {
+                switch (h)
+                {
+                    case 0:
+                        errorArray[h] = "Deletion Success!";
+                        break;
+                    case 1:
+                        errorArray[h] = "Account Deleted!";
+                        break;
+                }
+            }
 
             return errorArray;
         }

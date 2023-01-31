@@ -176,13 +176,6 @@ namespace student_health_records_system
 			return ((ISingleResult<uspGetAdminUsernameByAdminIDResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspCheckAdminUsernameExistence")]
-		public ISingleResult<uspCheckAdminUsernameExistenceResult> uspCheckAdminUsernameExistence([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUsername)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminUsername);
-			return ((ISingleResult<uspCheckAdminUsernameExistenceResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspUpdateAdmin")]
 		public int uspUpdateAdmin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminFName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminMName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminLName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminPWord, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string adminPhoneNum, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(2)")] string adminDept, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminAccess, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string adminStatus, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dateModified)
 		{
@@ -195,6 +188,20 @@ namespace student_health_records_system
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID);
 			return ((ISingleResult<uspGetAdminInfoByIDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspCheckAdminUsernameExistence")]
+		public ISingleResult<uspCheckAdminUsernameExistenceResult> uspCheckAdminUsernameExistence([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string adminUsername)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID, adminUsername);
+			return ((ISingleResult<uspCheckAdminUsernameExistenceResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspDeleteAdminAccount")]
+		public int uspDeleteAdminAccount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string adminID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), adminID);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -1697,32 +1704,6 @@ namespace student_health_records_system
 		}
 	}
 	
-	public partial class uspCheckAdminUsernameExistenceResult
-	{
-		
-		private System.Nullable<int> _Column1;
-		
-		public uspCheckAdminUsernameExistenceResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
-		public System.Nullable<int> Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
 	public partial class uspGetAdminInfoByIDResult
 	{
 		
@@ -1960,6 +1941,32 @@ namespace student_health_records_system
 				if ((this._date_modified != value))
 				{
 					this._date_modified = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspCheckAdminUsernameExistenceResult
+	{
+		
+		private string _admin_ID;
+		
+		public uspCheckAdminUsernameExistenceResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_admin_ID", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string admin_ID
+		{
+			get
+			{
+				return this._admin_ID;
+			}
+			set
+			{
+				if ((this._admin_ID != value))
+				{
+					this._admin_ID = value;
 				}
 			}
 		}
