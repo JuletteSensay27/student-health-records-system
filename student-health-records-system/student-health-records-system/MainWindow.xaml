@@ -13,49 +13,5 @@
         <CollectionViewSource x:Key="table_activityLogsViewSource" Source="{Binding table_activityLogs, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
         <CollectionViewSource x:Key="vwAdminIDandNameViewSource" Source="{Binding vwAdminIDandName, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
     </Window.Resources>
-    <Grid x:Name="mainGrid" DataContext="{StaticResource table_studentInfoViewSource}">
-        <TextBox x:Name="adminUsernameTbx" HorizontalAlignment="Left" Margin="22,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
-        <PasswordBox x:Name="adminPasswordPbx" HorizontalAlignment="Left" Margin="22,67,0,0" VerticalAlignment="Top" Width="199"/>
-        <Button x:Name="loginBtn" Content="Log In" HorizontalAlignment="Left" Margin="22,105,0,0" VerticalAlignment="Top" Width="52" Click="loginBtn_Click"/>
-        <TextBox x:Name="adminIDTbx" HorizontalAlignment="Left" Margin="406,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminFNameTbx" HorizontalAlignment="Left" Margin="406,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminMNameTbx" HorizontalAlignment="Left" Margin="406,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminLNameTbx" HorizontalAlignment="Left" Margin="406,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminUNameTbx" HorizontalAlignment="Left" Margin="406,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="adminPWordPbx" HorizontalAlignment="Left" Margin="406,194,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminEmailTbx" HorizontalAlignment="Left" Margin="406,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="adminPhoneNumTbx" HorizontalAlignment="Left" Margin="406,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="adminDeptCbx" HorizontalAlignment="Left" Margin="406,299,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="adminAccessCbx" HorizontalAlignment="Left" Margin="406,336,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="registerBtn" Content="Register Admin" HorizontalAlignment="Left" Margin="381,389,0,0" VerticalAlignment="Top" Click="registerBtn_Click"/>
-        <Button x:Name="logoutBtn" Content="Log Out" HorizontalAlignment="Left" Margin="22,179,0,0" VerticalAlignment="Top" Click="logoutBtn_Click"/>
-        <Button x:Name="updateAdminBtn" Content="Update Admin" HorizontalAlignment="Left" Margin="486,389,0,0" VerticalAlignment="Top" Click="updateAdminBtn_Click"/>
-        <Button x:Name="retrieveBtn" Content="Retrieve Info" HorizontalAlignment="Left" Margin="587,389,0,0" VerticalAlignment="Top" Click="retrieveBtn_Click"/>
-        <TextBox x:Name="adminStatusTbx" HorizontalAlignment="Left" Margin="538,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="deleteBtn" Content="Delete Account" HorizontalAlignment="Left" Margin="269,389,0,0" VerticalAlignment="Top" Click="deleteBtn_Click"/>
-        <Label x:Name="rndLbl" Content="Student ID: " HorizontalAlignment="Left" Margin="810,34,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="studentIDTbx" IsReadOnly="True" HorizontalAlignment="Left" Margin="887,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="rndLbl_Copy" Content="Student First Name: " HorizontalAlignment="Left" Margin="810,71,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rndLbl_Copy1" Content="Student Middle Name: " HorizontalAlignment="Left" Margin="810,101,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rndLbl_Copy2" Content="Student Last Name: " HorizontalAlignment="Left" Margin="810,127,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rndLbl_Copy3" Content="Student Gender: " HorizontalAlignment="Left" Margin="810,153,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rndLbl_Copy4" Content="Student Birthdate: " HorizontalAlignment="Left" Margin="812,199,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rndLbl_Copy5" Content="Student Age: " HorizontalAlignment="Left" Margin="812,246,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rndLbl_Copy6" Content="Student Phone Number: " HorizontalAlignment="Left" Margin="812,276,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="rndLbl_Copy7" Content="Student Email: " HorizontalAlignment="Left" Margin="812,306,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="studentFNameTbx" HorizontalAlignment="Left" Margin="932,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="studentMNameTbx" HorizontalAlignment="Left" Margin="942,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="studentLNameTbx" HorizontalAlignment="Left" Margin="942,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="studentAgeTbx" HorizontalAlignment="Left" Margin="949,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="studentPNumTbx" HorizontalAlignment="Left" Margin="958,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="studentEmailTbx" HorizontalAlignment="Left" Margin="958,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="studentGenderCbx" HorizontalAlignment="Left" Margin="942,160,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="studentGenderBDate" HorizontalAlignment="Left" Margin="946,203,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="registerStudentBtn" Content="Register Student" HorizontalAlignment="Left" Margin="814,457,0,0" VerticalAlignment="Top" Click="registerStudentBtn_Click"/>
-        <Button x:Name="sampleFileUpload1" Content="Upload Health File 1" HorizontalAlignment="Left" Margin="876,374,0,0" VerticalAlignment="Top" Width="140" Click="sampleFileUpload1_Click"/>
-        <Button x:Name="sampleFileUpload2" Content="Upload Health File 2" HorizontalAlignment="Left" Margin="876,399,0,0" VerticalAlignment="Top" Width="140"/>
-
-
-
-    </Grid>
+    <Grid x:Name="mainGrid" DataContext="{StaticResource table_studentInfoViewSource}"/>
 </Window>

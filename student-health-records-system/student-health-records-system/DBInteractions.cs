@@ -589,8 +589,6 @@ namespace student_health_records_system
                             DateTime.Parse(studentFiles.ElementAt(i).ElementAt(3).ToString()),
                             DateTime.Parse(studentFiles.ElementAt(i).ElementAt(4).ToString())
                         );
-              
-
                 fileCounter++;
             }
 
