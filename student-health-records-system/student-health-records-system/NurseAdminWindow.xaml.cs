@@ -19,10 +19,11 @@ namespace student_health_records_system
     /// </summary>
     public partial class AdminWindow : Window
     {
-        public AdminWindow()
+        public AdminWindow(string nurseUsername)
         {
             InitializeComponent();
-            mainTable.DataContext = vwStudentsIDAndName;
+            nurseUNameLbl.Content = nurseUsername;
+            
         }
     }
 }

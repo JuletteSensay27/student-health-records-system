@@ -3,11 +3,9 @@ C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\student-health-records-system.pdb
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.csproj.AssemblyReference.cache
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.csproj.SuggestedBindingRedirects.cache
-C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\MainWindow.g.cs
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\App.g.cs
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system_MarkupCompile.cache
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system_MarkupCompile.lref
-C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\MainWindow.baml
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.g.resources
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student_health_records_system.Properties.Resources.resources
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.csproj.GenerateResource.cache
@@ -16,7 +14,9 @@ C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.pdb
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\studentDataViewer.g.cs
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\studentDataViewer.baml
-C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\LogInWindow.g.cs
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\LogInWindow.baml
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseAdminWindow.g.cs
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseLogsWindow.g.cs
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseAdminWindow.baml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\NurseLogsWindow.baml

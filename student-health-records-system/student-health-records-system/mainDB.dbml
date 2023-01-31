@@ -7,6 +7,12 @@
       <Column Name="[Admin Username]" Member="Admin_Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.vwStudentsIDAndNames" Member="vwStudentsIDAndNames">
+    <Type Name="vwStudentsIDAndName">
+      <Column Name="[Student ID]" Member="Student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="[Student Name]" Member="Student_Name" Type="System.String" DbType="VarChar(303) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.uspRetrieveStudentFiles" Method="uspRetrieveStudentFiles">
     <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
     <ElementType Name="uspRetrieveStudentFilesResult">

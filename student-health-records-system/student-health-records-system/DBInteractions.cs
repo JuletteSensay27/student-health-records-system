@@ -92,7 +92,7 @@ namespace student_health_records_system
 
         public string[] userLogin(string userName, string userPassword)  
         {
-            string[] errorArray = new string[2];
+            string[] errorArray = new string[4];
             int invalidCounter = 0;
             var adminUsernames = dbconn.uspGetAdminUsernames().ToList();
 
@@ -174,6 +174,12 @@ namespace student_health_records_system
                             case 1:
                                 errorArray[i] = "Welcome IT Admin!";
                                 break;
+                            case 2:
+                                errorArray[i] = adminCredentials.ElementAt(0).adminAccess;
+                                break;
+                            case 3:
+                                errorArray[i] = adminCredentials.ElementAt(0).adminUsername;
+                                break;
                         }
                     }
                     break;
@@ -188,6 +194,12 @@ namespace student_health_records_system
                                 break;
                             case 1:
                                 errorArray[i] = "Welcome Nurse Admin!";
+                                break;
+                            case 2:
+                                errorArray[i] = adminCredentials.ElementAt(0).adminAccess;
+                                break;
+                            case 3:
+                                errorArray[i] = adminCredentials.ElementAt(0).adminUsername;
                                 break;
                         }
                     }
