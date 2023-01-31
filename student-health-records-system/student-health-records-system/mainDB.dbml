@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Student_Health_Record_System" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LUNETTELAPPY\SQLEXPRESS;Initial Catalog=Student_Health_Record_System;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="student_health_records_system.Properties.Settings" SettingsPropertyName="Student_Health_Record_SystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vwAdminIDandName" Member="vwAdminIDandNames">
+    <Type Name="vwAdminIDandName">
+      <Column Name="[Admin ID]" Member="Admin_ID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="[Admin Name]" Member="Admin_Name" Type="System.String" DbType="VarChar(302) NOT NULL" CanBeNull="false" />
+      <Column Name="[Admin Username]" Member="Admin_Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.uspRetrieveStudentFiles" Method="uspRetrieveStudentFiles">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <ElementType Name="uspRetrieveStudentFilesResult">
+      <Column Name="fileID" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fileName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fileType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fileRecordType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fileLocation" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspRetrieveStudentRecords" Method="uspRetrieveStudentRecords">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <ElementType Name="uspRetrieveStudentRecordsResult">
+      <Column Name="studentID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="studentFName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentMName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentLName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentEmail" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="studentPhoneNum" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspGetAdminUsernames" Method="uspGetAdminUsernames">
+    <ElementType Name="uspGetAdminUsernamesResult">
+      <Column Name="adminUsername" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspGetAdminIDs" Method="uspGetAdminIDs">
+    <ElementType Name="uspGetAdminIDsResult">
+      <Column Name="admin_ID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspRegisterAdmin" Method="uspRegisterAdmin">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="adminFName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminMName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminLName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminUName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPWord" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPhoneNum" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="adminEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminDept" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="adminAccess" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspGetAdminCredentials" Method="uspGetAdminCredentials">
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="uspGetAdminCredentialsResult">
+      <Column Name="adminUsername" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adminPassword" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adminAccess" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="adminStatus" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspUpdateAccountStatusLogIn" Method="uspUpdateAccountStatusLogIn">
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspUpdateAccountStatusLogOut" Method="uspUpdateAccountStatusLogOut">
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspDeleteAccount" Method="uspDeleteAccount">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspGetAdminUsernameByAdminID" Method="uspGetAdminUsernameByAdminID">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="uspGetAdminUsernameByAdminIDResult">
+      <Column Name="admin_userName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspUpdateAdmin" Method="uspUpdateAdmin">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="adminFName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminMName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminLName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminUName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPWord" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminPhoneNum" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="adminEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="adminDept" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="adminAccess" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="adminStatus" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspGetAdminInfoByID" Method="uspGetAdminInfoByID">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="uspGetAdminInfoByIDResult">
+      <Column Name="admin_ID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_firstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_middleName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_lastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_userName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_phoneNum" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_department" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_access" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="admin_status" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspCheckAdminUsernameExistence" Method="uspCheckAdminUsernameExistence">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="adminUsername" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="uspCheckAdminUsernameExistenceResult">
+      <Column Name="admin_ID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspDeleteAdminAccount" Method="uspDeleteAdminAccount">
+    <Parameter Name="adminID" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspGetAllStudentIDs" Method="uspGetAllStudentIDs">
+    <ElementType Name="uspGetAllStudentIDsResult">
+      <Column Name="student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspGetAdminNameAndID" Method="uspGetAdminNameAndID">
+    <ElementType Name="uspGetAdminNameAndIDResult">
+      <Column Name="adminUsername" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adminID" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspAddStudent" Method="uspAddStudent">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <Parameter Name="studentFName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="studentMName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="studentLName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="studentGender" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="studentBirthdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="studentAge" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="studentPNum" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="studentEmail" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspGetStudentCount" Method="uspGetStudentCount">
+    <ElementType Name="uspGetStudentCountResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getAllFileCountOfStudentByID" Method="getAllFileCountOfStudentByID">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <ElementType Name="getAllFileCountOfStudentByIDResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.uspAddStudentFiles" Method="uspAddStudentFiles">
+    <Parameter Name="studentID" Type="System.String" DbType="VarChar(9)" />
+    <Parameter Name="stuFileID" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="stuFileName" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="stuFileType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="stuFileLocation" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="dateCreated" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

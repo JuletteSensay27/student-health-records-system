@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:student_health_records_system"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="565" Width="1207" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Student_Health_Record_SystemDataSet x:Key="student_Health_Record_SystemDataSet"/>
+        <CollectionViewSource x:Key="table_studentInfoViewSource" Source="{Binding table_studentInfo, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+        <CollectionViewSource x:Key="table_adminAccountsViewSource" Source="{Binding table_adminAccounts, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+        <CollectionViewSource x:Key="table_activityLogsViewSource" Source="{Binding table_activityLogs, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+        <CollectionViewSource x:Key="vwAdminIDandNameViewSource" Source="{Binding vwAdminIDandName, Source={StaticResource student_Health_Record_SystemDataSet}}"/>
+    </Window.Resources>
+    <Grid x:Name="mainGrid" DataContext="{StaticResource table_studentInfoViewSource}"/>
 </Window>
