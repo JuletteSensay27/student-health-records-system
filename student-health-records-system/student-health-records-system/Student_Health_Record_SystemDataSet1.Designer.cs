@@ -20,9 +20,9 @@ namespace student_health_records_system {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Student_Health_Record_SystemDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Student_Health_Record_SystemDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Student_Health_Record_SystemDataSet : global::System.Data.DataSet {
+    public partial class Student_Health_Record_SystemDataSet1 : global::System.Data.DataSet {
         
         private table_activityLogsDataTable tabletable_activityLogs;
         
@@ -34,6 +34,8 @@ namespace student_health_records_system {
         
         private vwAdminIDandNameDataTable tablevwAdminIDandName;
         
+        private vwStudentsIDAndNamesDataTable tablevwStudentsIDAndNames;
+        
         private global::System.Data.DataRelation relationFK_activityLogs_adminAccounts;
         
         private global::System.Data.DataRelation relationFK_activityLogs_studentAccounts;
@@ -44,7 +46,7 @@ namespace student_health_records_system {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Student_Health_Record_SystemDataSet() {
+        public Student_Health_Record_SystemDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -55,7 +57,7 @@ namespace student_health_records_system {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected Student_Health_Record_SystemDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Student_Health_Record_SystemDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -82,6 +84,9 @@ namespace student_health_records_system {
                 }
                 if ((ds.Tables["vwAdminIDandName"] != null)) {
                     base.Tables.Add(new vwAdminIDandNameDataTable(ds.Tables["vwAdminIDandName"]));
+                }
+                if ((ds.Tables["vwStudentsIDAndNames"] != null)) {
+                    base.Tables.Add(new vwStudentsIDAndNamesDataTable(ds.Tables["vwStudentsIDAndNames"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -153,6 +158,16 @@ namespace student_health_records_system {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vwStudentsIDAndNamesDataTable vwStudentsIDAndNames {
+            get {
+                return this.tablevwStudentsIDAndNames;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -193,7 +208,7 @@ namespace student_health_records_system {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Student_Health_Record_SystemDataSet cln = ((Student_Health_Record_SystemDataSet)(base.Clone()));
+            Student_Health_Record_SystemDataSet1 cln = ((Student_Health_Record_SystemDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -232,6 +247,9 @@ namespace student_health_records_system {
                 }
                 if ((ds.Tables["vwAdminIDandName"] != null)) {
                     base.Tables.Add(new vwAdminIDandNameDataTable(ds.Tables["vwAdminIDandName"]));
+                }
+                if ((ds.Tables["vwStudentsIDAndNames"] != null)) {
+                    base.Tables.Add(new vwStudentsIDAndNamesDataTable(ds.Tables["vwStudentsIDAndNames"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -296,6 +314,12 @@ namespace student_health_records_system {
                     this.tablevwAdminIDandName.InitVars();
                 }
             }
+            this.tablevwStudentsIDAndNames = ((vwStudentsIDAndNamesDataTable)(base.Tables["vwStudentsIDAndNames"]));
+            if ((initTable == true)) {
+                if ((this.tablevwStudentsIDAndNames != null)) {
+                    this.tablevwStudentsIDAndNames.InitVars();
+                }
+            }
             this.relationFK_activityLogs_adminAccounts = this.Relations["FK_activityLogs_adminAccounts"];
             this.relationFK_activityLogs_studentAccounts = this.Relations["FK_activityLogs_studentAccounts"];
             this.relationFK_studentFile_studentInfo = this.Relations["FK_studentFile_studentInfo"];
@@ -304,9 +328,9 @@ namespace student_health_records_system {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Student_Health_Record_SystemDataSet";
+            this.DataSetName = "Student_Health_Record_SystemDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Student_Health_Record_SystemDataSet.xsd";
+            this.Namespace = "http://tempuri.org/Student_Health_Record_SystemDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabletable_activityLogs = new table_activityLogsDataTable();
@@ -319,6 +343,8 @@ namespace student_health_records_system {
             base.Tables.Add(this.tabletable_studentInfo);
             this.tablevwAdminIDandName = new vwAdminIDandNameDataTable();
             base.Tables.Add(this.tablevwAdminIDandName);
+            this.tablevwStudentsIDAndNames = new vwStudentsIDAndNamesDataTable();
+            base.Tables.Add(this.tablevwStudentsIDAndNames);
             this.relationFK_activityLogs_adminAccounts = new global::System.Data.DataRelation("FK_activityLogs_adminAccounts", new global::System.Data.DataColumn[] {
                         this.tabletable_adminAccounts.admin_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletable_activityLogs.admin_IDColumn}, false);
@@ -365,6 +391,12 @@ namespace student_health_records_system {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializevwStudentsIDAndNames() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -374,7 +406,7 @@ namespace student_health_records_system {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Student_Health_Record_SystemDataSet ds = new Student_Health_Record_SystemDataSet();
+            Student_Health_Record_SystemDataSet1 ds = new Student_Health_Record_SystemDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -432,6 +464,9 @@ namespace student_health_records_system {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void vwAdminIDandNameRowChangeEventHandler(object sender, vwAdminIDandNameRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void vwStudentsIDAndNamesRowChangeEventHandler(object sender, vwStudentsIDAndNamesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -718,7 +753,7 @@ namespace student_health_records_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Student_Health_Record_SystemDataSet ds = new Student_Health_Record_SystemDataSet();
+                Student_Health_Record_SystemDataSet1 ds = new Student_Health_Record_SystemDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1167,7 +1202,7 @@ namespace student_health_records_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Student_Health_Record_SystemDataSet ds = new Student_Health_Record_SystemDataSet();
+                Student_Health_Record_SystemDataSet1 ds = new Student_Health_Record_SystemDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1240,8 +1275,6 @@ namespace student_health_records_system {
             private global::System.Data.DataColumn columnstuFile_name;
             
             private global::System.Data.DataColumn columnstuFile_fileType;
-            
-            private global::System.Data.DataColumn columnstuFile_recordType;
             
             private global::System.Data.DataColumn columnstuFile_location;
             
@@ -1316,14 +1349,6 @@ namespace student_health_records_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn stuFile_recordTypeColumn {
-                get {
-                    return this.columnstuFile_recordType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn stuFile_locationColumn {
                 get {
                     return this.columnstuFile_location;
@@ -1383,14 +1408,13 @@ namespace student_health_records_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public table_studentFilesRow Addtable_studentFilesRow(string stuFile_ID, table_studentInfoRow parenttable_studentInfoRowByFK_studentFile_studentInfo, string stuFile_name, string stuFile_fileType, string stuFile_recordType, string stuFile_location, System.DateTime date_created, System.DateTime date_modified) {
+            public table_studentFilesRow Addtable_studentFilesRow(string stuFile_ID, table_studentInfoRow parenttable_studentInfoRowByFK_studentFile_studentInfo, string stuFile_name, string stuFile_fileType, string stuFile_location, System.DateTime date_created, System.DateTime date_modified) {
                 table_studentFilesRow rowtable_studentFilesRow = ((table_studentFilesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         stuFile_ID,
                         null,
                         stuFile_name,
                         stuFile_fileType,
-                        stuFile_recordType,
                         stuFile_location,
                         date_created,
                         date_modified};
@@ -1430,7 +1454,6 @@ namespace student_health_records_system {
                 this.columnstudent_ID = base.Columns["student_ID"];
                 this.columnstuFile_name = base.Columns["stuFile_name"];
                 this.columnstuFile_fileType = base.Columns["stuFile_fileType"];
-                this.columnstuFile_recordType = base.Columns["stuFile_recordType"];
                 this.columnstuFile_location = base.Columns["stuFile_location"];
                 this.columndate_created = base.Columns["date_created"];
                 this.columndate_modified = base.Columns["date_modified"];
@@ -1447,8 +1470,6 @@ namespace student_health_records_system {
                 base.Columns.Add(this.columnstuFile_name);
                 this.columnstuFile_fileType = new global::System.Data.DataColumn("stuFile_fileType", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstuFile_fileType);
-                this.columnstuFile_recordType = new global::System.Data.DataColumn("stuFile_recordType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstuFile_recordType);
                 this.columnstuFile_location = new global::System.Data.DataColumn("stuFile_location", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstuFile_location);
                 this.columndate_created = new global::System.Data.DataColumn("date_created", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1459,15 +1480,13 @@ namespace student_health_records_system {
                                 this.columnstuFile_ID}, true));
                 this.columnstuFile_ID.AllowDBNull = false;
                 this.columnstuFile_ID.Unique = true;
-                this.columnstuFile_ID.MaxLength = 10;
+                this.columnstuFile_ID.MaxLength = 11;
                 this.columnstudent_ID.AllowDBNull = false;
                 this.columnstudent_ID.MaxLength = 9;
                 this.columnstuFile_name.AllowDBNull = false;
                 this.columnstuFile_name.MaxLength = 100;
                 this.columnstuFile_fileType.AllowDBNull = false;
                 this.columnstuFile_fileType.MaxLength = 100;
-                this.columnstuFile_recordType.AllowDBNull = false;
-                this.columnstuFile_recordType.MaxLength = 100;
                 this.columnstuFile_location.AllowDBNull = false;
                 this.columnstuFile_location.MaxLength = 255;
                 this.columndate_created.AllowDBNull = false;
@@ -1539,7 +1558,7 @@ namespace student_health_records_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Student_Health_Record_SystemDataSet ds = new Student_Health_Record_SystemDataSet();
+                Student_Health_Record_SystemDataSet1 ds = new Student_Health_Record_SystemDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1612,6 +1631,12 @@ namespace student_health_records_system {
             private global::System.Data.DataColumn columnstudent_middleName;
             
             private global::System.Data.DataColumn columnstudent_lastName;
+            
+            private global::System.Data.DataColumn columnstudent_gender;
+            
+            private global::System.Data.DataColumn columnstudent_birthdate;
+            
+            private global::System.Data.DataColumn columnstudent_age;
             
             private global::System.Data.DataColumn columnstudent_phoneNum;
             
@@ -1688,6 +1713,30 @@ namespace student_health_records_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn student_genderColumn {
+                get {
+                    return this.columnstudent_gender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn student_birthdateColumn {
+                get {
+                    return this.columnstudent_birthdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn student_ageColumn {
+                get {
+                    return this.columnstudent_age;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn student_phoneNumColumn {
                 get {
                     return this.columnstudent_phoneNum;
@@ -1755,13 +1804,16 @@ namespace student_health_records_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public table_studentInfoRow Addtable_studentInfoRow(string student_ID, string student_firstName, string student_middleName, string student_lastName, string student_phoneNum, string student_email, System.DateTime date_created, System.DateTime date_modified) {
+            public table_studentInfoRow Addtable_studentInfoRow(string student_ID, string student_firstName, string student_middleName, string student_lastName, string student_gender, System.DateTime student_birthdate, string student_age, string student_phoneNum, string student_email, System.DateTime date_created, System.DateTime date_modified) {
                 table_studentInfoRow rowtable_studentInfoRow = ((table_studentInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         student_ID,
                         student_firstName,
                         student_middleName,
                         student_lastName,
+                        student_gender,
+                        student_birthdate,
+                        student_age,
                         student_phoneNum,
                         student_email,
                         date_created,
@@ -1799,6 +1851,9 @@ namespace student_health_records_system {
                 this.columnstudent_firstName = base.Columns["student_firstName"];
                 this.columnstudent_middleName = base.Columns["student_middleName"];
                 this.columnstudent_lastName = base.Columns["student_lastName"];
+                this.columnstudent_gender = base.Columns["student_gender"];
+                this.columnstudent_birthdate = base.Columns["student_birthdate"];
+                this.columnstudent_age = base.Columns["student_age"];
                 this.columnstudent_phoneNum = base.Columns["student_phoneNum"];
                 this.columnstudent_email = base.Columns["student_email"];
                 this.columndate_created = base.Columns["date_created"];
@@ -1816,6 +1871,12 @@ namespace student_health_records_system {
                 base.Columns.Add(this.columnstudent_middleName);
                 this.columnstudent_lastName = new global::System.Data.DataColumn("student_lastName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstudent_lastName);
+                this.columnstudent_gender = new global::System.Data.DataColumn("student_gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstudent_gender);
+                this.columnstudent_birthdate = new global::System.Data.DataColumn("student_birthdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstudent_birthdate);
+                this.columnstudent_age = new global::System.Data.DataColumn("student_age", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstudent_age);
                 this.columnstudent_phoneNum = new global::System.Data.DataColumn("student_phoneNum", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstudent_phoneNum);
                 this.columnstudent_email = new global::System.Data.DataColumn("student_email", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1835,6 +1896,11 @@ namespace student_health_records_system {
                 this.columnstudent_middleName.MaxLength = 100;
                 this.columnstudent_lastName.AllowDBNull = false;
                 this.columnstudent_lastName.MaxLength = 100;
+                this.columnstudent_gender.AllowDBNull = false;
+                this.columnstudent_gender.MaxLength = 1;
+                this.columnstudent_birthdate.AllowDBNull = false;
+                this.columnstudent_age.AllowDBNull = false;
+                this.columnstudent_age.MaxLength = 100;
                 this.columnstudent_phoneNum.AllowDBNull = false;
                 this.columnstudent_phoneNum.MaxLength = 10;
                 this.columnstudent_email.AllowDBNull = false;
@@ -1908,7 +1974,7 @@ namespace student_health_records_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Student_Health_Record_SystemDataSet ds = new Student_Health_Record_SystemDataSet();
+                Student_Health_Record_SystemDataSet1 ds = new Student_Health_Record_SystemDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2199,7 +2265,7 @@ namespace student_health_records_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Student_Health_Record_SystemDataSet ds = new Student_Health_Record_SystemDataSet();
+                Student_Health_Record_SystemDataSet1 ds = new Student_Health_Record_SystemDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2218,6 +2284,281 @@ namespace student_health_records_system {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "vwAdminIDandNameDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vwStudentsIDAndNamesDataTable : global::System.Data.TypedTableBase<vwStudentsIDAndNamesRow> {
+            
+            private global::System.Data.DataColumn columnStudent_ID;
+            
+            private global::System.Data.DataColumn columnStudent_Name;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public vwStudentsIDAndNamesDataTable() {
+                this.TableName = "vwStudentsIDAndNames";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal vwStudentsIDAndNamesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected vwStudentsIDAndNamesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Student_IDColumn {
+                get {
+                    return this.columnStudent_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Student_NameColumn {
+                get {
+                    return this.columnStudent_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public vwStudentsIDAndNamesRow this[int index] {
+                get {
+                    return ((vwStudentsIDAndNamesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event vwStudentsIDAndNamesRowChangeEventHandler vwStudentsIDAndNamesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event vwStudentsIDAndNamesRowChangeEventHandler vwStudentsIDAndNamesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event vwStudentsIDAndNamesRowChangeEventHandler vwStudentsIDAndNamesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event vwStudentsIDAndNamesRowChangeEventHandler vwStudentsIDAndNamesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddvwStudentsIDAndNamesRow(vwStudentsIDAndNamesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public vwStudentsIDAndNamesRow AddvwStudentsIDAndNamesRow(string Student_ID, string Student_Name) {
+                vwStudentsIDAndNamesRow rowvwStudentsIDAndNamesRow = ((vwStudentsIDAndNamesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Student_ID,
+                        Student_Name};
+                rowvwStudentsIDAndNamesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvwStudentsIDAndNamesRow);
+                return rowvwStudentsIDAndNamesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public vwStudentsIDAndNamesRow FindByStudent_ID(string Student_ID) {
+                return ((vwStudentsIDAndNamesRow)(this.Rows.Find(new object[] {
+                            Student_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vwStudentsIDAndNamesDataTable cln = ((vwStudentsIDAndNamesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vwStudentsIDAndNamesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnStudent_ID = base.Columns["Student ID"];
+                this.columnStudent_Name = base.Columns["Student Name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnStudent_ID = new global::System.Data.DataColumn("Student ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudent_ID);
+                this.columnStudent_Name = new global::System.Data.DataColumn("Student Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudent_Name);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnStudent_ID}, true));
+                this.columnStudent_ID.AllowDBNull = false;
+                this.columnStudent_ID.Unique = true;
+                this.columnStudent_ID.MaxLength = 9;
+                this.columnStudent_Name.ReadOnly = true;
+                this.columnStudent_Name.MaxLength = 303;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public vwStudentsIDAndNamesRow NewvwStudentsIDAndNamesRow() {
+                return ((vwStudentsIDAndNamesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vwStudentsIDAndNamesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vwStudentsIDAndNamesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vwStudentsIDAndNamesRowChanged != null)) {
+                    this.vwStudentsIDAndNamesRowChanged(this, new vwStudentsIDAndNamesRowChangeEvent(((vwStudentsIDAndNamesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vwStudentsIDAndNamesRowChanging != null)) {
+                    this.vwStudentsIDAndNamesRowChanging(this, new vwStudentsIDAndNamesRowChangeEvent(((vwStudentsIDAndNamesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vwStudentsIDAndNamesRowDeleted != null)) {
+                    this.vwStudentsIDAndNamesRowDeleted(this, new vwStudentsIDAndNamesRowChangeEvent(((vwStudentsIDAndNamesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vwStudentsIDAndNamesRowDeleting != null)) {
+                    this.vwStudentsIDAndNamesRowDeleting(this, new vwStudentsIDAndNamesRowChangeEvent(((vwStudentsIDAndNamesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemovevwStudentsIDAndNamesRow(vwStudentsIDAndNamesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Student_Health_Record_SystemDataSet1 ds = new Student_Health_Record_SystemDataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vwStudentsIDAndNamesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2590,17 +2931,6 @@ namespace student_health_records_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string stuFile_recordType {
-                get {
-                    return ((string)(this[this.tabletable_studentFiles.stuFile_recordTypeColumn]));
-                }
-                set {
-                    this[this.tabletable_studentFiles.stuFile_recordTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string stuFile_location {
                 get {
                     return ((string)(this[this.tabletable_studentFiles.stuFile_locationColumn]));
@@ -2699,6 +3029,39 @@ namespace student_health_records_system {
                 }
                 set {
                     this[this.tabletable_studentInfo.student_lastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string student_gender {
+                get {
+                    return ((string)(this[this.tabletable_studentInfo.student_genderColumn]));
+                }
+                set {
+                    this[this.tabletable_studentInfo.student_genderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime student_birthdate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletable_studentInfo.student_birthdateColumn]));
+                }
+                set {
+                    this[this.tabletable_studentInfo.student_birthdateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string student_age {
+                get {
+                    return ((string)(this[this.tabletable_studentInfo.student_ageColumn]));
+                }
+                set {
+                    this[this.tabletable_studentInfo.student_ageColumn] = value;
                 }
             }
             
@@ -2831,6 +3194,60 @@ namespace student_health_records_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAdmin_NameNull() {
                 this[this.tablevwAdminIDandName.Admin_NameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vwStudentsIDAndNamesRow : global::System.Data.DataRow {
+            
+            private vwStudentsIDAndNamesDataTable tablevwStudentsIDAndNames;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal vwStudentsIDAndNamesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevwStudentsIDAndNames = ((vwStudentsIDAndNamesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Student_ID {
+                get {
+                    return ((string)(this[this.tablevwStudentsIDAndNames.Student_IDColumn]));
+                }
+                set {
+                    this[this.tablevwStudentsIDAndNames.Student_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Student_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tablevwStudentsIDAndNames.Student_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Student Name\' in table \'vwStudentsIDAndNames\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevwStudentsIDAndNames.Student_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsStudent_NameNull() {
+                return this.IsNull(this.tablevwStudentsIDAndNames.Student_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetStudent_NameNull() {
+                this[this.tablevwStudentsIDAndNames.Student_NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3003,9 +3420,43 @@ namespace student_health_records_system {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class vwStudentsIDAndNamesRowChangeEvent : global::System.EventArgs {
+            
+            private vwStudentsIDAndNamesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public vwStudentsIDAndNamesRowChangeEvent(vwStudentsIDAndNamesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public vwStudentsIDAndNamesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
-namespace student_health_records_system.Student_Health_Record_SystemDataSetTableAdapters {
+namespace student_health_records_system.Student_Health_Record_SystemDataSet1TableAdapters {
     
     
     /// <summary>
@@ -3198,7 +3649,7 @@ SELECT log_ID, admin_ID, log_activity, log_type, student_ID, date_created FROM t
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Student_Health_Record_SystemDataSet.table_activityLogsDataTable dataTable) {
+        public virtual int Fill(Student_Health_Record_SystemDataSet1.table_activityLogsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3211,9 +3662,9 @@ SELECT log_ID, admin_ID, log_activity, log_type, student_ID, date_created FROM t
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Student_Health_Record_SystemDataSet.table_activityLogsDataTable GetData() {
+        public virtual Student_Health_Record_SystemDataSet1.table_activityLogsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Student_Health_Record_SystemDataSet.table_activityLogsDataTable dataTable = new Student_Health_Record_SystemDataSet.table_activityLogsDataTable();
+            Student_Health_Record_SystemDataSet1.table_activityLogsDataTable dataTable = new Student_Health_Record_SystemDataSet1.table_activityLogsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3221,14 +3672,14 @@ SELECT log_ID, admin_ID, log_activity, log_type, student_ID, date_created FROM t
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet.table_activityLogsDataTable dataTable) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1.table_activityLogsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet dataSet) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "table_activityLogs");
         }
         
@@ -3669,7 +4120,7 @@ SELECT admin_ID, admin_firstName, admin_middleName, admin_lastName, admin_userNa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Student_Health_Record_SystemDataSet.table_adminAccountsDataTable dataTable) {
+        public virtual int Fill(Student_Health_Record_SystemDataSet1.table_adminAccountsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3682,9 +4133,9 @@ SELECT admin_ID, admin_firstName, admin_middleName, admin_lastName, admin_userNa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Student_Health_Record_SystemDataSet.table_adminAccountsDataTable GetData() {
+        public virtual Student_Health_Record_SystemDataSet1.table_adminAccountsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Student_Health_Record_SystemDataSet.table_adminAccountsDataTable dataTable = new Student_Health_Record_SystemDataSet.table_adminAccountsDataTable();
+            Student_Health_Record_SystemDataSet1.table_adminAccountsDataTable dataTable = new Student_Health_Record_SystemDataSet1.table_adminAccountsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3692,14 +4143,14 @@ SELECT admin_ID, admin_firstName, admin_middleName, admin_lastName, admin_userNa
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet.table_adminAccountsDataTable dataTable) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1.table_adminAccountsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet dataSet) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "table_adminAccounts");
         }
         
@@ -4238,46 +4689,42 @@ SELECT admin_ID, admin_firstName, admin_middleName, admin_lastName, admin_userNa
             tableMapping.ColumnMappings.Add("student_ID", "student_ID");
             tableMapping.ColumnMappings.Add("stuFile_name", "stuFile_name");
             tableMapping.ColumnMappings.Add("stuFile_fileType", "stuFile_fileType");
-            tableMapping.ColumnMappings.Add("stuFile_recordType", "stuFile_recordType");
             tableMapping.ColumnMappings.Add("stuFile_location", "stuFile_location");
             tableMapping.ColumnMappings.Add("date_created", "date_created");
             tableMapping.ColumnMappings.Add("date_modified", "date_modified");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_studentFiles] WHERE (([stuFile_ID] = @Original_stuFile_ID) AND ([student_ID] = @Original_student_ID) AND ([stuFile_name] = @Original_stuFile_name) AND ([stuFile_fileType] = @Original_stuFile_fileType) AND ([stuFile_recordType] = @Original_stuFile_recordType) AND ([stuFile_location] = @Original_stuFile_location) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_studentFiles] WHERE (([stuFile_ID] = @Original_stuFile_ID) AND ([student_ID] = @Original_student_ID) AND ([stuFile_name] = @Original_stuFile_name) AND ([stuFile_fileType] = @Original_stuFile_fileType) AND ([stuFile_location] = @Original_stuFile_location) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_fileType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_fileType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_recordType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_recordType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_modified", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_modified", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_studentFiles] ([stuFile_ID], [student_ID], [stuFile_name], [stuFile_fileType], [stuFile_recordType], [stuFile_location], [date_created], [date_modified]) VALUES (@stuFile_ID, @student_ID, @stuFile_name, @stuFile_fileType, @stuFile_recordType, @stuFile_location, @date_created, @date_modified);
-SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordType, stuFile_location, date_created, date_modified FROM table_studentFiles WHERE (stuFile_ID = @stuFile_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_studentFiles] ([stuFile_ID], [student_ID], [stuFile_name], [stuFile_fileType], [stuFile_location], [date_created], [date_modified]) VALUES (@stuFile_ID, @student_ID, @stuFile_name, @stuFile_fileType, @stuFile_location, @date_created, @date_modified);
+SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_location, date_created, date_modified FROM table_studentFiles WHERE (stuFile_ID = @stuFile_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_fileType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_fileType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_recordType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_recordType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_modified", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_modified", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_studentFiles] SET [stuFile_ID] = @stuFile_ID, [student_ID] = @student_ID, [stuFile_name] = @stuFile_name, [stuFile_fileType] = @stuFile_fileType, [stuFile_recordType] = @stuFile_recordType, [stuFile_location] = @stuFile_location, [date_created] = @date_created, [date_modified] = @date_modified WHERE (([stuFile_ID] = @Original_stuFile_ID) AND ([student_ID] = @Original_student_ID) AND ([stuFile_name] = @Original_stuFile_name) AND ([stuFile_fileType] = @Original_stuFile_fileType) AND ([stuFile_recordType] = @Original_stuFile_recordType) AND ([stuFile_location] = @Original_stuFile_location) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified));
-SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordType, stuFile_location, date_created, date_modified FROM table_studentFiles WHERE (stuFile_ID = @stuFile_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_studentFiles] SET [stuFile_ID] = @stuFile_ID, [student_ID] = @student_ID, [stuFile_name] = @stuFile_name, [stuFile_fileType] = @stuFile_fileType, [stuFile_location] = @stuFile_location, [date_created] = @date_created, [date_modified] = @date_modified WHERE (([stuFile_ID] = @Original_stuFile_ID) AND ([student_ID] = @Original_student_ID) AND ([stuFile_name] = @Original_stuFile_name) AND ([stuFile_fileType] = @Original_stuFile_fileType) AND ([stuFile_location] = @Original_stuFile_location) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified));
+SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_location, date_created, date_modified FROM table_studentFiles WHERE (stuFile_ID = @stuFile_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_fileType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_fileType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_recordType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_recordType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stuFile_location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_modified", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_modified", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4285,7 +4732,6 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_fileType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_fileType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_recordType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_recordType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_stuFile_location", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "stuFile_location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_modified", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_modified", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4304,8 +4750,8 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordType" +
-                ", stuFile_location, date_created, date_modified FROM dbo.table_studentFiles";
+            this._commandCollection[0].CommandText = "SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_location, " +
+                "date_created, date_modified FROM dbo.table_studentFiles";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4313,7 +4759,7 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Student_Health_Record_SystemDataSet.table_studentFilesDataTable dataTable) {
+        public virtual int Fill(Student_Health_Record_SystemDataSet1.table_studentFilesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4326,9 +4772,9 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Student_Health_Record_SystemDataSet.table_studentFilesDataTable GetData() {
+        public virtual Student_Health_Record_SystemDataSet1.table_studentFilesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Student_Health_Record_SystemDataSet.table_studentFilesDataTable dataTable = new Student_Health_Record_SystemDataSet.table_studentFilesDataTable();
+            Student_Health_Record_SystemDataSet1.table_studentFilesDataTable dataTable = new Student_Health_Record_SystemDataSet1.table_studentFilesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4336,14 +4782,14 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet.table_studentFilesDataTable dataTable) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1.table_studentFilesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet dataSet) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "table_studentFiles");
         }
         
@@ -4366,7 +4812,7 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_stuFile_ID, string Original_student_ID, string Original_stuFile_name, string Original_stuFile_fileType, string Original_stuFile_recordType, string Original_stuFile_location, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
+        public virtual int Delete(string Original_stuFile_ID, string Original_student_ID, string Original_stuFile_name, string Original_stuFile_fileType, string Original_stuFile_location, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
             if ((Original_stuFile_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_stuFile_ID");
             }
@@ -4391,20 +4837,14 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_stuFile_fileType));
             }
-            if ((Original_stuFile_recordType == null)) {
-                throw new global::System.ArgumentNullException("Original_stuFile_recordType");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_stuFile_recordType));
-            }
             if ((Original_stuFile_location == null)) {
                 throw new global::System.ArgumentNullException("Original_stuFile_location");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_stuFile_location));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_stuFile_location));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_date_created));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_date_modified));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_date_created));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_date_modified));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4425,7 +4865,7 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string stuFile_ID, string student_ID, string stuFile_name, string stuFile_fileType, string stuFile_recordType, string stuFile_location, System.DateTime date_created, System.DateTime date_modified) {
+        public virtual int Insert(string stuFile_ID, string student_ID, string stuFile_name, string stuFile_fileType, string stuFile_location, System.DateTime date_created, System.DateTime date_modified) {
             if ((stuFile_ID == null)) {
                 throw new global::System.ArgumentNullException("stuFile_ID");
             }
@@ -4450,20 +4890,14 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(stuFile_fileType));
             }
-            if ((stuFile_recordType == null)) {
-                throw new global::System.ArgumentNullException("stuFile_recordType");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(stuFile_recordType));
-            }
             if ((stuFile_location == null)) {
                 throw new global::System.ArgumentNullException("stuFile_location");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(stuFile_location));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(stuFile_location));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(date_created));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(date_modified));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(date_created));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(date_modified));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4484,23 +4918,7 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string stuFile_ID, 
-                    string student_ID, 
-                    string stuFile_name, 
-                    string stuFile_fileType, 
-                    string stuFile_recordType, 
-                    string stuFile_location, 
-                    System.DateTime date_created, 
-                    System.DateTime date_modified, 
-                    string Original_stuFile_ID, 
-                    string Original_student_ID, 
-                    string Original_stuFile_name, 
-                    string Original_stuFile_fileType, 
-                    string Original_stuFile_recordType, 
-                    string Original_stuFile_location, 
-                    System.DateTime Original_date_created, 
-                    System.DateTime Original_date_modified) {
+        public virtual int Update(string stuFile_ID, string student_ID, string stuFile_name, string stuFile_fileType, string stuFile_location, System.DateTime date_created, System.DateTime date_modified, string Original_stuFile_ID, string Original_student_ID, string Original_stuFile_name, string Original_stuFile_fileType, string Original_stuFile_location, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
             if ((stuFile_ID == null)) {
                 throw new global::System.ArgumentNullException("stuFile_ID");
             }
@@ -4525,58 +4943,46 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(stuFile_fileType));
             }
-            if ((stuFile_recordType == null)) {
-                throw new global::System.ArgumentNullException("stuFile_recordType");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(stuFile_recordType));
-            }
             if ((stuFile_location == null)) {
                 throw new global::System.ArgumentNullException("stuFile_location");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(stuFile_location));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(stuFile_location));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(date_created));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(date_modified));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(date_created));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(date_modified));
             if ((Original_stuFile_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_stuFile_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_stuFile_ID));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_stuFile_ID));
             }
             if ((Original_student_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_student_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_student_ID));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_student_ID));
             }
             if ((Original_stuFile_name == null)) {
                 throw new global::System.ArgumentNullException("Original_stuFile_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_stuFile_name));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_stuFile_name));
             }
             if ((Original_stuFile_fileType == null)) {
                 throw new global::System.ArgumentNullException("Original_stuFile_fileType");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_stuFile_fileType));
-            }
-            if ((Original_stuFile_recordType == null)) {
-                throw new global::System.ArgumentNullException("Original_stuFile_recordType");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_stuFile_recordType));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_stuFile_fileType));
             }
             if ((Original_stuFile_location == null)) {
                 throw new global::System.ArgumentNullException("Original_stuFile_location");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_stuFile_location));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_stuFile_location));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_date_created));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_date_modified));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_date_created));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_date_modified));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4597,8 +5003,8 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string student_ID, string stuFile_name, string stuFile_fileType, string stuFile_recordType, string stuFile_location, System.DateTime date_created, System.DateTime date_modified, string Original_stuFile_ID, string Original_student_ID, string Original_stuFile_name, string Original_stuFile_fileType, string Original_stuFile_recordType, string Original_stuFile_location, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
-            return this.Update(Original_stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordType, stuFile_location, date_created, date_modified, Original_stuFile_ID, Original_student_ID, Original_stuFile_name, Original_stuFile_fileType, Original_stuFile_recordType, Original_stuFile_location, Original_date_created, Original_date_modified);
+        public virtual int Update(string student_ID, string stuFile_name, string stuFile_fileType, string stuFile_location, System.DateTime date_created, System.DateTime date_modified, string Original_stuFile_ID, string Original_student_ID, string Original_stuFile_name, string Original_stuFile_fileType, string Original_stuFile_location, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
+            return this.Update(Original_stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_location, date_created, date_modified, Original_stuFile_ID, Original_student_ID, Original_stuFile_name, Original_stuFile_fileType, Original_stuFile_location, Original_date_created, Original_date_modified);
         }
     }
     
@@ -4727,6 +5133,9 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
             tableMapping.ColumnMappings.Add("student_firstName", "student_firstName");
             tableMapping.ColumnMappings.Add("student_middleName", "student_middleName");
             tableMapping.ColumnMappings.Add("student_lastName", "student_lastName");
+            tableMapping.ColumnMappings.Add("student_gender", "student_gender");
+            tableMapping.ColumnMappings.Add("student_birthdate", "student_birthdate");
+            tableMapping.ColumnMappings.Add("student_age", "student_age");
             tableMapping.ColumnMappings.Add("student_phoneNum", "student_phoneNum");
             tableMapping.ColumnMappings.Add("student_email", "student_email");
             tableMapping.ColumnMappings.Add("date_created", "date_created");
@@ -4734,38 +5143,47 @@ SELECT stuFile_ID, student_ID, stuFile_name, stuFile_fileType, stuFile_recordTyp
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_studentInfo] WHERE (([student_ID] = @Original_student_ID) AND ([student_firstName] = @Original_student_firstName) AND ([student_middleName] = @Original_student_middleName) AND ([student_lastName] = @Original_student_lastName) AND ([student_phoneNum] = @Original_student_phoneNum) AND ([student_email] = @Original_student_email) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[table_studentInfo] WHERE (([student_ID] = @Original_student_ID) AND ([student_firstName] = @Original_student_firstName) AND ([student_middleName] = @Original_student_middleName) AND ([student_lastName] = @Original_student_lastName) AND ([student_gender] = @Original_student_gender) AND ([student_birthdate] = @Original_student_birthdate) AND ([student_age] = @Original_student_age) AND ([student_phoneNum] = @Original_student_phoneNum) AND ([student_email] = @Original_student_email) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_firstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_firstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_middleName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_middleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_lastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_birthdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_age", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_age", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_phoneNum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_phoneNum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_modified", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_modified", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_studentInfo] ([student_ID], [student_firstName], [student_middleName], [student_lastName], [student_phoneNum], [student_email], [date_created], [date_modified]) VALUES (@student_ID, @student_firstName, @student_middleName, @student_lastName, @student_phoneNum, @student_email, @date_created, @date_modified);
-SELECT student_ID, student_firstName, student_middleName, student_lastName, student_phoneNum, student_email, date_created, date_modified FROM table_studentInfo WHERE (student_ID = @student_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[table_studentInfo] ([student_ID], [student_firstName], [student_middleName], [student_lastName], [student_gender], [student_birthdate], [student_age], [student_phoneNum], [student_email], [date_created], [date_modified]) VALUES (@student_ID, @student_firstName, @student_middleName, @student_lastName, @student_gender, @student_birthdate, @student_age, @student_phoneNum, @student_email, @date_created, @date_modified);
+SELECT student_ID, student_firstName, student_middleName, student_lastName, student_gender, student_birthdate, student_age, student_phoneNum, student_email, date_created, date_modified FROM table_studentInfo WHERE (student_ID = @student_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_firstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_firstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_middleName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_middleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_lastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_birthdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_age", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_age", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_phoneNum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_phoneNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_modified", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_modified", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_studentInfo] SET [student_ID] = @student_ID, [student_firstName] = @student_firstName, [student_middleName] = @student_middleName, [student_lastName] = @student_lastName, [student_phoneNum] = @student_phoneNum, [student_email] = @student_email, [date_created] = @date_created, [date_modified] = @date_modified WHERE (([student_ID] = @Original_student_ID) AND ([student_firstName] = @Original_student_firstName) AND ([student_middleName] = @Original_student_middleName) AND ([student_lastName] = @Original_student_lastName) AND ([student_phoneNum] = @Original_student_phoneNum) AND ([student_email] = @Original_student_email) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified));
-SELECT student_ID, student_firstName, student_middleName, student_lastName, student_phoneNum, student_email, date_created, date_modified FROM table_studentInfo WHERE (student_ID = @student_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[table_studentInfo] SET [student_ID] = @student_ID, [student_firstName] = @student_firstName, [student_middleName] = @student_middleName, [student_lastName] = @student_lastName, [student_gender] = @student_gender, [student_birthdate] = @student_birthdate, [student_age] = @student_age, [student_phoneNum] = @student_phoneNum, [student_email] = @student_email, [date_created] = @date_created, [date_modified] = @date_modified WHERE (([student_ID] = @Original_student_ID) AND ([student_firstName] = @Original_student_firstName) AND ([student_middleName] = @Original_student_middleName) AND ([student_lastName] = @Original_student_lastName) AND ([student_gender] = @Original_student_gender) AND ([student_birthdate] = @Original_student_birthdate) AND ([student_age] = @Original_student_age) AND ([student_phoneNum] = @Original_student_phoneNum) AND ([student_email] = @Original_student_email) AND ([date_created] = @Original_date_created) AND ([date_modified] = @Original_date_modified));
+SELECT student_ID, student_firstName, student_middleName, student_lastName, student_gender, student_birthdate, student_age, student_phoneNum, student_email, date_created, date_modified FROM table_studentInfo WHERE (student_ID = @student_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_firstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_firstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_middleName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_middleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_lastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_birthdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_age", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_age", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_phoneNum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_phoneNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4774,6 +5192,9 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_firstName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_firstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_middleName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_middleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_lastName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_lastName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_birthdate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_age", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_age", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_phoneNum", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_phoneNum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_date_created", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "date_created", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4794,8 +5215,8 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT student_ID, student_firstName, student_middleName, student_lastName, stude" +
-                "nt_phoneNum, student_email, date_created, date_modified FROM dbo.table_studentIn" +
-                "fo";
+                "nt_gender, student_birthdate, student_age, student_phoneNum, student_email, date" +
+                "_created, date_modified FROM dbo.table_studentInfo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4803,7 +5224,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Student_Health_Record_SystemDataSet.table_studentInfoDataTable dataTable) {
+        public virtual int Fill(Student_Health_Record_SystemDataSet1.table_studentInfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4816,9 +5237,9 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Student_Health_Record_SystemDataSet.table_studentInfoDataTable GetData() {
+        public virtual Student_Health_Record_SystemDataSet1.table_studentInfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Student_Health_Record_SystemDataSet.table_studentInfoDataTable dataTable = new Student_Health_Record_SystemDataSet.table_studentInfoDataTable();
+            Student_Health_Record_SystemDataSet1.table_studentInfoDataTable dataTable = new Student_Health_Record_SystemDataSet1.table_studentInfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4826,14 +5247,14 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet.table_studentInfoDataTable dataTable) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1.table_studentInfoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Student_Health_Record_SystemDataSet dataSet) {
+        public virtual int Update(Student_Health_Record_SystemDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "table_studentInfo");
         }
         
@@ -4856,7 +5277,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_student_ID, string Original_student_firstName, string Original_student_middleName, string Original_student_lastName, string Original_student_phoneNum, string Original_student_email, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
+        public virtual int Delete(string Original_student_ID, string Original_student_firstName, string Original_student_middleName, string Original_student_lastName, string Original_student_gender, System.DateTime Original_student_birthdate, string Original_student_age, string Original_student_phoneNum, string Original_student_email, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
             if ((Original_student_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_student_ID");
             }
@@ -4881,20 +5302,33 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_student_lastName));
             }
+            if ((Original_student_gender == null)) {
+                throw new global::System.ArgumentNullException("Original_student_gender");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_student_gender));
+            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_student_birthdate));
+            if ((Original_student_age == null)) {
+                throw new global::System.ArgumentNullException("Original_student_age");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_student_age));
+            }
             if ((Original_student_phoneNum == null)) {
                 throw new global::System.ArgumentNullException("Original_student_phoneNum");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_student_phoneNum));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_student_phoneNum));
             }
             if ((Original_student_email == null)) {
                 throw new global::System.ArgumentNullException("Original_student_email");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_student_email));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_student_email));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_date_created));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_date_modified));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_date_created));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_date_modified));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4915,7 +5349,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string student_ID, string student_firstName, string student_middleName, string student_lastName, string student_phoneNum, string student_email, System.DateTime date_created, System.DateTime date_modified) {
+        public virtual int Insert(string student_ID, string student_firstName, string student_middleName, string student_lastName, string student_gender, System.DateTime student_birthdate, string student_age, string student_phoneNum, string student_email, System.DateTime date_created, System.DateTime date_modified) {
             if ((student_ID == null)) {
                 throw new global::System.ArgumentNullException("student_ID");
             }
@@ -4940,20 +5374,33 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(student_lastName));
             }
+            if ((student_gender == null)) {
+                throw new global::System.ArgumentNullException("student_gender");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(student_gender));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(student_birthdate));
+            if ((student_age == null)) {
+                throw new global::System.ArgumentNullException("student_age");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(student_age));
+            }
             if ((student_phoneNum == null)) {
                 throw new global::System.ArgumentNullException("student_phoneNum");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(student_phoneNum));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(student_phoneNum));
             }
             if ((student_email == null)) {
                 throw new global::System.ArgumentNullException("student_email");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(student_email));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(student_email));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(date_created));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(date_modified));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(date_created));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(date_modified));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4979,6 +5426,9 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
                     string student_firstName, 
                     string student_middleName, 
                     string student_lastName, 
+                    string student_gender, 
+                    System.DateTime student_birthdate, 
+                    string student_age, 
                     string student_phoneNum, 
                     string student_email, 
                     System.DateTime date_created, 
@@ -4987,6 +5437,9 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
                     string Original_student_firstName, 
                     string Original_student_middleName, 
                     string Original_student_lastName, 
+                    string Original_student_gender, 
+                    System.DateTime Original_student_birthdate, 
+                    string Original_student_age, 
                     string Original_student_phoneNum, 
                     string Original_student_email, 
                     System.DateTime Original_date_created, 
@@ -5015,58 +5468,84 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(student_lastName));
             }
+            if ((student_gender == null)) {
+                throw new global::System.ArgumentNullException("student_gender");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(student_gender));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(student_birthdate));
+            if ((student_age == null)) {
+                throw new global::System.ArgumentNullException("student_age");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(student_age));
+            }
             if ((student_phoneNum == null)) {
                 throw new global::System.ArgumentNullException("student_phoneNum");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(student_phoneNum));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(student_phoneNum));
             }
             if ((student_email == null)) {
                 throw new global::System.ArgumentNullException("student_email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(student_email));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(student_email));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(date_created));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(date_modified));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(date_created));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(date_modified));
             if ((Original_student_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_student_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_student_ID));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_student_ID));
             }
             if ((Original_student_firstName == null)) {
                 throw new global::System.ArgumentNullException("Original_student_firstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_student_firstName));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_student_firstName));
             }
             if ((Original_student_middleName == null)) {
                 throw new global::System.ArgumentNullException("Original_student_middleName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_student_middleName));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_student_middleName));
             }
             if ((Original_student_lastName == null)) {
                 throw new global::System.ArgumentNullException("Original_student_lastName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_student_lastName));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_student_lastName));
+            }
+            if ((Original_student_gender == null)) {
+                throw new global::System.ArgumentNullException("Original_student_gender");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_student_gender));
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_student_birthdate));
+            if ((Original_student_age == null)) {
+                throw new global::System.ArgumentNullException("Original_student_age");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_student_age));
             }
             if ((Original_student_phoneNum == null)) {
                 throw new global::System.ArgumentNullException("Original_student_phoneNum");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_student_phoneNum));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_student_phoneNum));
             }
             if ((Original_student_email == null)) {
                 throw new global::System.ArgumentNullException("Original_student_email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_student_email));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_student_email));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_date_created));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_date_modified));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_date_created));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_date_modified));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5087,8 +5566,29 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string student_firstName, string student_middleName, string student_lastName, string student_phoneNum, string student_email, System.DateTime date_created, System.DateTime date_modified, string Original_student_ID, string Original_student_firstName, string Original_student_middleName, string Original_student_lastName, string Original_student_phoneNum, string Original_student_email, System.DateTime Original_date_created, System.DateTime Original_date_modified) {
-            return this.Update(Original_student_ID, student_firstName, student_middleName, student_lastName, student_phoneNum, student_email, date_created, date_modified, Original_student_ID, Original_student_firstName, Original_student_middleName, Original_student_lastName, Original_student_phoneNum, Original_student_email, Original_date_created, Original_date_modified);
+        public virtual int Update(
+                    string student_firstName, 
+                    string student_middleName, 
+                    string student_lastName, 
+                    string student_gender, 
+                    System.DateTime student_birthdate, 
+                    string student_age, 
+                    string student_phoneNum, 
+                    string student_email, 
+                    System.DateTime date_created, 
+                    System.DateTime date_modified, 
+                    string Original_student_ID, 
+                    string Original_student_firstName, 
+                    string Original_student_middleName, 
+                    string Original_student_lastName, 
+                    string Original_student_gender, 
+                    System.DateTime Original_student_birthdate, 
+                    string Original_student_age, 
+                    string Original_student_phoneNum, 
+                    string Original_student_email, 
+                    System.DateTime Original_date_created, 
+                    System.DateTime Original_date_modified) {
+            return this.Update(Original_student_ID, student_firstName, student_middleName, student_lastName, student_gender, student_birthdate, student_age, student_phoneNum, student_email, date_created, date_modified, Original_student_ID, Original_student_firstName, Original_student_middleName, Original_student_lastName, Original_student_gender, Original_student_birthdate, Original_student_age, Original_student_phoneNum, Original_student_email, Original_date_created, Original_date_modified);
         }
     }
     
@@ -5240,7 +5740,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Student_Health_Record_SystemDataSet.vwAdminIDandNameDataTable dataTable) {
+        public virtual int Fill(Student_Health_Record_SystemDataSet1.vwAdminIDandNameDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5253,9 +5753,177 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Student_Health_Record_SystemDataSet.vwAdminIDandNameDataTable GetData() {
+        public virtual Student_Health_Record_SystemDataSet1.vwAdminIDandNameDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Student_Health_Record_SystemDataSet.vwAdminIDandNameDataTable dataTable = new Student_Health_Record_SystemDataSet.vwAdminIDandNameDataTable();
+            Student_Health_Record_SystemDataSet1.vwAdminIDandNameDataTable dataTable = new Student_Health_Record_SystemDataSet1.vwAdminIDandNameDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class vwStudentsIDAndNamesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public vwStudentsIDAndNamesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "vwStudentsIDAndNames";
+            tableMapping.ColumnMappings.Add("Student ID", "Student ID");
+            tableMapping.ColumnMappings.Add("Student Name", "Student Name");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::student_health_records_system.Properties.Settings.Default.Student_Health_Record_SystemConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT [Student ID], [Student Name] FROM dbo.vwStudentsIDAndNames";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Student_Health_Record_SystemDataSet1.vwStudentsIDAndNamesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Student_Health_Record_SystemDataSet1.vwStudentsIDAndNamesDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Student_Health_Record_SystemDataSet1.vwStudentsIDAndNamesDataTable dataTable = new Student_Health_Record_SystemDataSet1.vwStudentsIDAndNamesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5421,7 +6089,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(Student_Health_Record_SystemDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Student_Health_Record_SystemDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._table_adminAccountsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.table_adminAccounts.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -5467,7 +6135,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(Student_Health_Record_SystemDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Student_Health_Record_SystemDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._table_adminAccountsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.table_adminAccounts.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -5509,7 +6177,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(Student_Health_Record_SystemDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Student_Health_Record_SystemDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._table_studentFilesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.table_studentFiles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -5575,7 +6243,7 @@ SELECT student_ID, student_firstName, student_middleName, student_lastName, stud
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(Student_Health_Record_SystemDataSet dataSet) {
+        public virtual int UpdateAll(Student_Health_Record_SystemDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

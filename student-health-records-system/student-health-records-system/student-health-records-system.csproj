@@ -34,6 +34,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -56,14 +60,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="NurseAdminWindow.xaml.cs">
+      <DependentUpon>NurseAdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogInWindow.xaml.cs">
+      <DependentUpon>LogInWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="studentDataViewer.xaml.cs">
       <DependentUpon>studentDataViewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Student_Health_Record_SystemDataSet.Designer.cs">
+    <Compile Include="Student_Health_Record_SystemDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Student_Health_Record_SystemDataSet.xsd</DependentUpon>
+      <DependentUpon>Student_Health_Record_SystemDataSet1.xsd</DependentUpon>
     </Compile>
+    <Page Include="NurseAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -117,16 +135,16 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Student_Health_Record_SystemDataSet.xsc">
-      <DependentUpon>Student_Health_Record_SystemDataSet.xsd</DependentUpon>
+    <None Include="Student_Health_Record_SystemDataSet1.xsc">
+      <DependentUpon>Student_Health_Record_SystemDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="Student_Health_Record_SystemDataSet.xsd">
+    <None Include="Student_Health_Record_SystemDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Student_Health_Record_SystemDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>Student_Health_Record_SystemDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Student_Health_Record_SystemDataSet.xss">
-      <DependentUpon>Student_Health_Record_SystemDataSet.xsd</DependentUpon>
+    <None Include="Student_Health_Record_SystemDataSet1.xss">
+      <DependentUpon>Student_Health_Record_SystemDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

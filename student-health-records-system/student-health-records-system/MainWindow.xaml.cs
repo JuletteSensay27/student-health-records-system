@@ -31,9 +31,7 @@ namespace student_health_records_system
 
         public MainWindow()
         {
-            InitializeComponent();
-
-         
+            InitializeComponent();    
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
