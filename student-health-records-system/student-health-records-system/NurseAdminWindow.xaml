@@ -18,6 +18,7 @@
         <TextBox x:Name="studentIDToBeManipTbx" HorizontalAlignment="Left" Margin="24,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="showLogsWindowBtn" Content="Open Logs" HorizontalAlignment="Left" Margin="701,50,0,0" VerticalAlignment="Top"/>
         <Label x:Name="nurseUNameLbl" Content="" HorizontalAlignment="Left" Margin="24,16,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="logoutBtn" Content="Log Out" HorizontalAlignment="Left" Margin="701,16,0,0" VerticalAlignment="Top" Width="61" Click="logoutBtn_Click"/>
 
     </Grid>
 </Window>

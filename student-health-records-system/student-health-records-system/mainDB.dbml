@@ -176,4 +176,10 @@
     <Parameter Name="dateModified" Type="System.DateTime" DbType="DateTime" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.uspGetAllStudentNamesAndID" Method="uspGetAllStudentNamesAndID">
+    <ElementType Name="uspGetAllStudentNamesAndIDResult">
+      <Column Name="[Student ID]" Member="Student_ID" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="[Student Name]" Member="Student_Name" Type="System.String" DbType="VarChar(303) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
