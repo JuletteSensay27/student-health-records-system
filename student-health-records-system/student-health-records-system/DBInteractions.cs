@@ -592,7 +592,7 @@ namespace student_health_records_system
             for (int i = 0; i < students.Count; i++) 
             {
                 string actualStudentID = string.Empty;
-                int idNumber = int.Parse(getStudentCount.ToString()) + 1;
+                int idNumber = int.Parse(getStudentCount().ToString()) + 1;
 
                 if (idNumber < 10)
                 {
@@ -617,7 +617,7 @@ namespace student_health_records_system
                 if (students.Values.ElementAt(i).Count < 8)
                 {
                     failedInserts++;
-                    students.Values.Remove(students.Values.ElementAt(i));
+                    students.Remove(students.Values.ElementAt(i));
                 }
                 else
                 {
