@@ -19,11 +19,30 @@ namespace student_health_records_system
     /// </summary>
     public partial class AdminWindow : Window
     {
+        DBInteractions dbFunctions = new DBInteractions();
+
         public AdminWindow(string nurseUsername)
         {
             InitializeComponent();
             nurseUNameLbl.Content = nurseUsername;
             
+        }
+
+        private void addRecordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddStudentWindow newStudent = new AddStudentWindow();
+            newStudent.Show();
+        }
+
+        private void NurseAdminWindow_Closed(object sender, EventArgs e)
+        {
+            string[] message = dbFunctions.userLogout(nurseUNameLbl.Content.ToString());
+
+            MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
+
+            LogInWindow newLogin = new LogInWindow();
+            newLogin.Show();
+            this.Close();
         }
     }
 }

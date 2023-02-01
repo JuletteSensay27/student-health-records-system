@@ -542,8 +542,8 @@ namespace student_health_records_system
                     studentInfo.ElementAt(6).ToString(),
                     studentInfo.ElementAt(7).ToString(),
                     studentInfo.ElementAt(8).ToString(),
-                    DateTime.Parse(studentInfo.ElementAt(9).ToString()),
-                    DateTime.Parse(studentInfo.ElementAt(10).ToString())
+                    DateTime.Now,
+                    DateTime.Now
                 );
 
             int fileAddResult = studentFilesAdd(studentFiles, actualStudentID);
@@ -598,8 +598,8 @@ namespace student_health_records_system
                             studentFiles.ElementAt(i).ElementAt(0).ToString(),
                             studentFiles.ElementAt(i).ElementAt(1).ToString(),                   
                             studentFiles.ElementAt(i).ElementAt(2).ToString(),
-                            DateTime.Parse(studentFiles.ElementAt(i).ElementAt(3).ToString()),
-                            DateTime.Parse(studentFiles.ElementAt(i).ElementAt(4).ToString())
+                            DateTime.Now,
+                            DateTime.Now
                         );
                 fileCounter++;
             }
