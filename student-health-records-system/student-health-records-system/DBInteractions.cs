@@ -617,7 +617,6 @@ namespace student_health_records_system
                 if (students.Values.ElementAt(i).Count < 8)
                 {
                     failedInserts++;
-                    students.Remove(students.Values.ElementAt(i));
                 }
                 else
                 {
