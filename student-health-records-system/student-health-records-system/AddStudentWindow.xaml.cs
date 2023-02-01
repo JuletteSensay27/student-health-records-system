@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 
 using AForge.Video;
 using AForge.Video.DirectShow;
-
+using Microsoft.Win32;
 
 namespace student_health_records_system
 {
@@ -27,7 +27,8 @@ namespace student_health_records_system
     {
         FilterInfoCollection fic = null;
         VideoCaptureDevice vcd = null;
-
+        private List<List<Object>> studentFiles = new List<List<Object>>(); 
+       
         public AddStudentWindow()
         {
             InitializeComponent();
@@ -85,9 +86,7 @@ namespace student_health_records_system
             CaptureImgBtn.IsEnabled = true;
             startCameraBtn.IsEnabled = true;
             uploadImgBtn.IsEnabled = false;
-            startCameraBtn.Content = "Turn Off Camera";
-
-
+            startCameraBtn.Content = "Turn Off Camera"; 
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -101,6 +100,8 @@ namespace student_health_records_system
 
         public void ImageToFile(string filePath)
         {
+
+            List<Object> temp = new List<object>();
             var image = studentImageImgbx.Source;
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
@@ -108,8 +109,17 @@ namespace student_health_records_system
                 encoder.Frames.Add(BitmapFrame.Create((BitmapSource)image));
                 encoder.Save(fileStream);
             }
+
+           
         }
 
+        private void uploadImgBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.tif;...";
+            ofd.Multiselect = false;
 
+
+        }
     }
 }
