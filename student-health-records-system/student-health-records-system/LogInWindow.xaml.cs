@@ -47,5 +47,12 @@ namespace student_health_records_system
             nurseWindow.Show();
             this.Close();
         }
+
+      
+
+        private void adminPWordPbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            adminPWordLbl.Content = "";
+        }
     }
 }

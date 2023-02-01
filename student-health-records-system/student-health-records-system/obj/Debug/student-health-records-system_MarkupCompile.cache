@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\
+C:\Users\Admin\Desktop\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\
 student_health_records_system
 none
 false
 DEBUG;TRACE
-C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\App.xaml
+C:\Users\Admin\Desktop\student-health-records-system\student-health-records-system\student-health-records-system\App.xaml
 4-649126008
 
 111605036333
-141458853696
+162007995546
 NurseAdminWindow.xaml;LogInWindow.xaml;NurseLogsWindow.xaml;studentDataViewer.xaml;
 
-False
+True
 
