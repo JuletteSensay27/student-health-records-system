@@ -6,7 +6,7 @@
         xmlns:materialdesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:student_health_records_system"
         mc:Ignorable="d"
-        Title="LogInWindow" Height="311" Width="620">
+        Title="LogInWindow" Height="325" Width="620">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

@@ -54,5 +54,10 @@ namespace student_health_records_system
         {
             adminPWordLbl.Content = "";
         }
+
+        private void adminUNameTbx_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

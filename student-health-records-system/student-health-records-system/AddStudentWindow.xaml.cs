@@ -77,6 +77,8 @@ namespace student_health_records_system
                 startCameraBtn.IsEnabled = true;
                 uploadImgBtn.IsEnabled = true;
                 startCameraBtn.Content = "start Camera";
+                vcd = null;
+                studentImageImgbx.Source = null;
                 return;
             }
 

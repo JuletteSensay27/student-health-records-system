@@ -31,3 +31,18 @@ C:\Users\Admin\Desktop\student-health-records-system\student-health-records-syst
 C:\Users\Admin\Desktop\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system_MarkupCompile.lref
 C:\Users\Admin\Desktop\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.exe
 C:\Users\Admin\Desktop\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.pdb
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\AddStudentWindow.g.cs
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\AForge.dll
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\AForge.Video.dll
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\MahApps.Metro.IconPacks.Core.dll
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\MahApps.Metro.IconPacks.Material.dll
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\AForge.xml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\AForge.Video.xml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\MahApps.Metro.IconPacks.Core.pdb
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\MahApps.Metro.IconPacks.Core.xml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\MahApps.Metro.IconPacks.Material.pdb
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\MahApps.Metro.IconPacks.Material.xml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\AddStudentWindow.baml
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.csproj.CopyComplete
