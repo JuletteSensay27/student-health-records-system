@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -654,32 +655,64 @@ namespace student_health_records_system
             return errorMessage;
         }
 
-      /*  public string[] massStudentFilesAdd(Dictionary<string, List<List<Object>>> studentsFile) 
+        public int massStudentFilesAdd(List<Object> fileInfo) 
         {
-            *//*
+            /*
              * Student ID
              * original File Location
              * FileName
              * FileType
              * 
-             *//*
+             */
 
             var allStudentIDs = dbconn.uspGetAllStudentIDs().ToList();
+            
             List<string> temp = new List<string>();
+            int checker = 0;
 
             for (int i = 0; i < allStudentIDs.Count; i++) 
             {
                 temp.Add(allStudentIDs.ElementAt(0).student_ID.ToString());
             }
 
-            for (int i = 0; i < studentsFile.Count; i++) 
+            if (!temp.Contains(fileInfo.ElementAt(0))) 
             {
-                for (int x = 0; x < studentsFile.Values.ElementAt(i).ElementAt(i).Count; i++) 
-                {
-
-                }
+                checker = 1; //fail
+                return checker;
             }
-        }*/
+
+            if (fileInfo.Count() != 4) 
+            {
+                checker = 1; //fail
+                return checker;
+            }
+
+            var studentFileCount = dbconn.getAllFileCountOfStudentByID(fileInfo.ElementAt(0).ToString());
+            string fileID = $"{int.Parse(studentFileCount.ToString()) + 1}F{fileInfo.ElementAt(0)}";
+            string folderPath = $"C:\\Users\\julet\\Desktop\\Workspace\\JuletteSensay27\\c# Apps\\student-health-records-system\\student-health-records-system\\FileStorage\\{fileInfo.ElementAt(0)}";
+
+            if (!Directory.Exists(folderPath)) 
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            string newFilePath = $"{folderPath}\\{fileInfo.ElementAt(2)}.{fileInfo.ElementAt(3)}";
+            File.Copy(fileInfo.ElementAt(1).ToString(),newFilePath);
+
+            dbconn.uspAddStudentFiles
+                (
+                fileInfo.ElementAt(0).ToString(),
+                fileID,
+                fileInfo.ElementAt(2).ToString(),
+                fileInfo.ElementAt(3).ToString(),
+                newFilePath,
+                DateTime.Now,
+                DateTime.Now
+                );
+            
+
+            return checker;
+        }
 
         private int studentFilesAdd(List<List<Object>> studentFiles, string actualStudentID) 
         {
