@@ -24,6 +24,7 @@ namespace student_health_records_system
         public LogInWindow()
         {
             InitializeComponent();
+            
         }
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
@@ -58,6 +59,11 @@ namespace student_health_records_system
         private void adminUNameTbx_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void adminPWordPbx_GotFocus_1(object sender, RoutedEventArgs e)
+        {
+            adminPWordLbl.Content = "";
         }
     }
 }

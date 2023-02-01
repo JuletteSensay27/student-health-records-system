@@ -42,7 +42,7 @@ namespace student_health_records_system
 
             LogInWindow newLogin = new LogInWindow();
             newLogin.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

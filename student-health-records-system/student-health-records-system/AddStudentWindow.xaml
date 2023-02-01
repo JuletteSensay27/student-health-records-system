@@ -5,13 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:student_health_records_system"
         mc:Ignorable="d"
-        Title="AddStudentWindow" Height="450" Width="800">
+        Title="AddStudentWindow" Height="466" Width="873" Closed="addStudentWindow_Closed">
     <Grid Loaded="Grid_Loaded">
-        <Image x:Name="studentImageImgbx" HorizontalAlignment="Left" Height="128" Margin="37,19,0,0" VerticalAlignment="Top" Width="130" OpacityMask="Black"/>
-        <Button x:Name="uploadImgBtn" Content="Upload Image" HorizontalAlignment="Left" Margin="63,167,0,0" VerticalAlignment="Top" Click="uploadImgBtn_Click"/>
-        <Button x:Name="CaptureImgBtn" Content="Capture Image" HorizontalAlignment="Left" Margin="188,114,0,0" VerticalAlignment="Top" Click="CaptureImgBtn_Click" Width="191"/>
-        <Button x:Name="startCameraBtn" Content="start Camera" HorizontalAlignment="Left" Margin="188,75,0,0" VerticalAlignment="Top" Width="191" Click="startCameraBtn_Click"/>
-        <ComboBox x:Name="camerasCbx" HorizontalAlignment="Left" Margin="190,35,0,0" VerticalAlignment="Top" Width="189"/>
+
+        <Image x:Name="studentImageImgbx" HorizontalAlignment="Left" Height="128" Margin="30,32,0,0" VerticalAlignment="Top" Width="130" OpacityMask="Black"/>
+        <Button x:Name="uploadImgBtn" Content="Upload Image" HorizontalAlignment="Left" Margin="60,167,0,0" VerticalAlignment="Top" Click="uploadImgBtn_Click"/>
+        <Button x:Name="CaptureImgBtn" Content="Capture Image" HorizontalAlignment="Left" Margin="179,126,0,0" VerticalAlignment="Top" Click="CaptureImgBtn_Click" Width="190"/>
+        <Button x:Name="startCameraBtn" Content="start Camera" HorizontalAlignment="Left" Margin="179,87,0,0" VerticalAlignment="Top" Width="190" Click="startCameraBtn_Click"/>
+        <ComboBox x:Name="camerasCbx" HorizontalAlignment="Left" Margin="181,47,0,0" VerticalAlignment="Top" Width="188"/>
+        <TextBox x:Name="sampleIDTbx" HorizontalAlignment="Left" Margin="633,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="154"/>
+        <Button x:Name="sampleRegisterBtn" Content="Register" HorizontalAlignment="Left" Margin="652,392,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="studentIDLbl" Content="Student ID" HorizontalAlignment="Left" Margin="518,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="studentFNameTbx" HorizontalAlignment="Left" Margin="30,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Label x:Name="studentFNameLbl" Content="Student First Name" HorizontalAlignment="Left" Margin="30,233,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="studentMNameLbl" Content="Student Middle Name" HorizontalAlignment="Left" Margin="199,233,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="studentMNameTbx" HorizontalAlignment="Left" Margin="199,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="studentLNameTbx" HorizontalAlignment="Left" Margin="361,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Label x:Name="studentLNameLbl" Content="Student Last Name" HorizontalAlignment="Left" Margin="361,233,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="genderCbx" HorizontalAlignment="Left" Margin="30,324,0,0" VerticalAlignment="Top" Width="152"/>
+        <Label x:Name="studentGender" Content="Student Gender" HorizontalAlignment="Left" Margin="30,293,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="studentBirthDate" HorizontalAlignment="Left" Margin="199,322,0,0" VerticalAlignment="Top" Width="152" SelectedDateChanged="studentBirthDate_SelectedDateChanged"/>
+        <Label x:Name="studentGender_Copy" Content="Student Birthdate" HorizontalAlignment="Left" Margin="199,291,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="studentAgeLbl" Content="Student Birthdate" HorizontalAlignment="Left" Margin="369,293,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="studentAgeTbx" HorizontalAlignment="Left" Margin="361,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="studentPhoneNumTbx" HorizontalAlignment="Left" Margin="30,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Label x:Name="studentPhoneNumLbl" Content="Student Phone Number" HorizontalAlignment="Left" Margin="30,361,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="studentEmailTbx" HorizontalAlignment="Left" Margin="199,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <Label x:Name="studentEmailLbl" Content="Student Email" HorizontalAlignment="Left" Margin="199,361,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="fileNamesContLbl" Content="" HorizontalAlignment="Left" Margin="518,47,0,0" VerticalAlignment="Top" Height="130" Width="269" BorderThickness="2,2,2,2" BorderBrush="Black"/>
+        <Button x:Name="uploadFilesBtn" Content="Upload File/s" HorizontalAlignment="Left" Margin="518,182,0,0" VerticalAlignment="Top" Width="269" Click="uploadFilesBtn_Click"/>
 
     </Grid>
 </Window>

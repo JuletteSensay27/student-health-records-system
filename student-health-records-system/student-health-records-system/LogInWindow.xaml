@@ -67,7 +67,7 @@
     <Grid>
 
         <TextBox x:Name="adminUNameTbx" Text ="Account ID:" HorizontalAlignment="Left" Margin="116,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" BorderBrush="{x:Null}" FontFamily="Century Gothic" Foreground="#FFB8B2B2" TextChanged="adminUNameTbx_TextChanged"/>
-        <PasswordBox x:Name="adminPWordPbx" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" BorderBrush="{x:Null}" FontSize="16" FontFamily="Century Gothic" FontWeight="Bold" Margin="116,200,0,0" Password="" Foreground="#FFB8B2B2"/>
+        <PasswordBox x:Name="adminPWordPbx" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" BorderBrush="{x:Null}" FontSize="16" FontFamily="Century Gothic" FontWeight="Bold" Margin="116,200,0,0" Password="" Foreground="#FFB8B2B2" GotFocus="adminPWordPbx_GotFocus_1"/>
         <Label x:Name="adminPWordLbl" Content="Password:" HorizontalAlignment="Left" Margin="115,196,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" Foreground="#FFB8B2B2" FontWeight="Bold"/>
         <Button Style="{DynamicResource RoundedButton}" x:Name="loginBtn" Content="Log In" HorizontalAlignment="Left" Margin="120,256,0,0" VerticalAlignment="Top" Width="104" Click="loginBtn_Click" Background="#FF79A3DC" FontFamily="Century Gothic" FontWeight="Bold" FontSize="14" BorderBrush="{x:Null}" Height="29" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="38" Margin="26,20,0,0" VerticalAlignment="Top" Width="193" Source="/LOGO.png"/>

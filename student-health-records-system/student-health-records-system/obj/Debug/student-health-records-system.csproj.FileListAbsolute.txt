@@ -46,3 +46,4 @@ C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\bin\Debug\MahApps.Metro.IconPacks.Material.xml
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\AddStudentWindow.baml
 C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\student-health-records-system.csproj.CopyComplete
+C:\Users\julet\Desktop\Workspace\JuletteSensay27\c# Apps\student-health-records-system\student-health-records-system\student-health-records-system\obj\Debug\App.baml
