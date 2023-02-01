@@ -672,10 +672,10 @@ namespace student_health_records_system
 
             for (int i = 0; i < allStudentIDs.Count; i++) 
             {
-                temp.Add(allStudentIDs.ElementAt(0).student_ID.ToString());
+                temp.Add(allStudentIDs.ElementAt(i).student_ID.ToString());
             }
 
-            if (!temp.Contains(fileInfo.ElementAt(0))) 
+            if (!temp.Contains(fileInfo.ElementAt(0).ToString())) 
             {
                 checker = 1; //fail
                 return checker;
@@ -687,8 +687,14 @@ namespace student_health_records_system
                 return checker;
             }
 
-            var studentFileCount = dbconn.getAllFileCountOfStudentByID(fileInfo.ElementAt(0).ToString());
-            string fileID = $"{int.Parse(studentFileCount.ToString()) + 1}F{fileInfo.ElementAt(0)}";
+            if (!File.Exists($"{fileInfo.ElementAt(1)}\\{fileInfo.ElementAt(2)}.{fileInfo.ElementAt(3)}"))
+            {
+                checker = 1; //fail
+                return checker;
+            }
+
+            var studentFileCount = dbconn.getAllFileCountOfStudentByID(fileInfo.ElementAt(0).ToString()).Single();
+            string fileID = $"{int.Parse(studentFileCount.Column1.Value.ToString()) + 1}F{fileInfo.ElementAt(0)}";
             string folderPath = $"C:\\Users\\julet\\Desktop\\Workspace\\JuletteSensay27\\c# Apps\\student-health-records-system\\student-health-records-system\\FileStorage\\{fileInfo.ElementAt(0)}";
 
             if (!Directory.Exists(folderPath)) 
@@ -697,7 +703,14 @@ namespace student_health_records_system
             }
 
             string newFilePath = $"{folderPath}\\{fileInfo.ElementAt(2)}.{fileInfo.ElementAt(3)}";
-            File.Copy(fileInfo.ElementAt(1).ToString(),newFilePath);
+
+            if (File.Exists(newFilePath)) 
+            {
+                checker = 1; //fail
+                return checker;
+            }
+
+            File.Copy($"{fileInfo.ElementAt(1)}\\{fileInfo.ElementAt(2)}.{fileInfo.ElementAt(3)}",newFilePath);
 
             dbconn.uspAddStudentFiles
                 (
@@ -710,6 +723,7 @@ namespace student_health_records_system
                 DateTime.Now
                 );
             
+            checker = 0;
 
             return checker;
         }
