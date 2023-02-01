@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace student_health_records_system
 {
@@ -92,6 +94,43 @@ namespace student_health_records_system
             LogInWindow newLogin = new LogInWindow();
             newLogin.Show();
             this.Close();
+        }
+
+
+        private void massInsertBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Csv Files (*.csv) | *.csv";
+            ofd.Multiselect = false;
+            int studentCounter = 0;
+            Dictionary<string, List<Object>> students = new Dictionary<string, List<object>>();
+            string[] message = new string[2];
+
+            if ((bool)ofd.ShowDialog()) 
+            {
+                using (StreamReader sr = new StreamReader(ofd.FileName))
+                {
+                    string line = string.Empty;
+
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        List<Object> tempStudentHolder = new List<Object>();
+                        string[] tempArr = line.Split(',');
+
+                        for (int i = 0; i < tempArr.Length; i++) 
+                        {
+                            tempStudentHolder.Add(tempArr[i].ToString());
+                        }
+
+                        students.Add($"S{studentCounter+1}", tempStudentHolder);
+                        studentCounter++;
+                    }
+                }
+            }
+
+            message = dbFunctions.massStudentRegister(students);
+            MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
+
         }
     }
 }

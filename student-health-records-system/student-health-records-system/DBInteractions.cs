@@ -583,6 +583,78 @@ namespace student_health_records_system
 
         }
 
+        public string[] massStudentRegister(Dictionary<string, List<Object>> students/*, Dictionary<string, List<List<Object>>> studentsFile*/)
+        {
+            string[] errorMessage = new string[2];
+            int failedInserts = 0;
+            int successfulInserts = 0;
+
+            for (int i = 0; i < students.Count; i++) 
+            {
+                string actualStudentID = string.Empty;
+                int idNumber = int.Parse(getStudentCount().ToString()) + 1;
+
+                if (idNumber < 10)
+                {
+                    actualStudentID = $"S{DateTime.Now.Year}000{idNumber}";
+                }
+
+                if (idNumber > 10 && idNumber < 100)
+                {
+                    actualStudentID = $"S{DateTime.Now.Year}00{idNumber}";
+                }
+
+                if (idNumber > 100 && idNumber < 1000)
+                {
+                    actualStudentID = $"S{DateTime.Now.Year}0{idNumber}";
+                }
+
+                if (idNumber > 1000 && idNumber < 10000)
+                {
+                    actualStudentID = $"S{DateTime.Now.Year}{idNumber}";
+                }
+
+                if (students.Values.ElementAt(i).Count < 8)
+                {
+                    failedInserts++;
+                    students.Remove(students.Values.ElementAt(i));
+                }
+                else
+                {
+                    dbconn.uspAddStudent
+                    (
+                        actualStudentID,
+                        students.Values.ElementAt(i).ElementAt(1).ToString(),
+                        students.Values.ElementAt(i).ElementAt(2).ToString(),
+                        students.Values.ElementAt(i).ElementAt(3).ToString(),
+                        students.Values.ElementAt(i).ElementAt(4).ToString(),
+                        DateTime.Parse(students.Values.ElementAt(i).ElementAt(5).ToString()),
+                        students.Values.ElementAt(i).ElementAt(6).ToString(),
+                        students.Values.ElementAt(i).ElementAt(7).ToString(),
+                        students.Values.ElementAt(i).ElementAt(8).ToString(),
+                        DateTime.Now,
+                        DateTime.Now
+                    );
+                    successfulInserts++;
+                }
+            }
+
+            for (int h = 0; h < errorMessage.Length; h++)
+            {
+                switch (h)
+                {
+                    case 0:
+                        errorMessage[h] = "Mass Inserts Report:";
+                        break;
+                    case 1:
+                        errorMessage[h] = $"Success: {successfulInserts}\nFailed: {failedInserts}";
+                        break;
+                }
+            }
+
+            return errorMessage;
+        }
+
         private int studentFilesAdd(List<List<Object>> studentFiles, string actualStudentID) 
         {
             int result = 0;
