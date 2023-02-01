@@ -96,5 +96,11 @@ namespace student_health_records_system
             newLoginWindow.Show();
            
         }
+
+        private void addRecordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddStudentWindow newStudent = new AddStudentWindow();
+            newStudent.ShowDialog();
+        }
     }
 }
