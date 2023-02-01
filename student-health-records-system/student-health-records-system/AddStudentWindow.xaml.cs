@@ -32,7 +32,6 @@ namespace student_health_records_system
         private List<Object> tempStudentImage = new List<Object>();
         private List<List<Object>> tempStudentFiles = new List<List<Object>>();
 
-
         public AddStudentWindow()
         {
 
@@ -44,6 +43,10 @@ namespace student_health_records_system
             sampleIDTbx.IsReadOnly = true;
             submitButton(sampleRegisterBtn);
             studentImageImgbx.Source = null;
+            genderCbx.Items.Add("M");
+            genderCbx.Items.Add("F");   
+            genderCbx.Text = "Select an Item";
+            studentAgeTbx.IsReadOnly = true;
         }
 
         private string IDToImageName(TextBox studentIDTbx) 
@@ -168,27 +171,27 @@ namespace student_health_records_system
 
         private void SubmitBtn_Click(object sender, RoutedEventArgs e)
         {
+            string[] message = new string[2];
+            studentFiles = new List<List<Object>>();
             studentFiles.Add(tempStudentImage);
             for (int i = 0; i < tempStudentFiles.Count; i++) 
             {
                 studentFiles.Add(tempStudentFiles.ElementAt(i)); 
             }
 
-            List<Object> studentInfo = new List<Object>() 
-            {
-                sampleIDTbx.Text.ToString(),
-                studentFNameTbx.Text.ToString(),
-                studentMNameTbx.Text.ToString(),
-                studentLNameTbx.Text.ToString(),
-                genderCbx.SelectedItem.ToString(),
-                studentBirthDate.SelectedDate.ToString(),
-                studentAgeTbx.Text.ToString(),
-                studentEmailTbx.Text.ToString(),
-                studentPhoneNumTbx.Text.ToString()
+            List<Object> studentInfo = new List<Object>();            
 
-            };
-
-            if (studentInfo.Contains(null)) 
+            studentInfo.Add(sampleIDTbx.Text.ToString());
+            studentInfo.Add(studentFNameTbx.Text.ToString());
+            studentInfo.Add(studentMNameTbx.Text.ToString());
+            studentInfo.Add(studentLNameTbx.Text.ToString());
+            studentInfo.Add(genderCbx.Text.ToString());
+            studentInfo.Add(studentBirthDate.SelectedDate.ToString());
+            studentInfo.Add(studentAgeTbx.Text.ToString());
+            studentInfo.Add(studentPhoneNumTbx.Text.ToString());
+            studentInfo.Add(studentEmailTbx.Text.ToString());
+            
+            if (studentInfo.Contains("")) 
             {
                 MessageBox.Show("All Basic Info Fields Must Be filled!");
                 return;
@@ -224,14 +227,59 @@ namespace student_health_records_system
                $"c# Apps\\student-health-records-system\\student-health-records-system\\" +
                $"FileStorage\\{folderName}";
 
-            for(int i = 0; i <)
+            for (int i = 0; i < studentFiles.Count; i++) 
+            {
+                if (studentFiles.ElementAt(i).Count < 1) 
+                {
+                    MessageBox.Show("Record Must Have a student Image!");
+                    return;
+                }
+
+                if (studentFiles.ElementAt(i).ElementAt(1).ToString() != "PDF")
+                {
+                    ImageSource image = studentImageImgbx.Source;
+
+                    if (image == null)
+                    {
+                        MessageBox.Show("Record Must Have a student Image!");
+                        return;
+                    }
+
+                    string ImageFilePath = $"{FilePath}\\{studentFiles.ElementAt(i).ElementAt(0)}.{studentFiles.ElementAt(i).ElementAt(1)}";
+
+                    using (var fileStream = new FileStream(ImageFilePath, FileMode.Create))
+                    {
+                        BitmapEncoder encoder = new PngBitmapEncoder();
+                        encoder.Frames.Add(BitmapFrame.Create((BitmapSource)image));
+                        encoder.Save(fileStream);
+                    }
+
+                    studentFiles.ElementAt(i).Add(ImageFilePath);
+                }
+                else
+                {
+                    string filePath = $"{FilePath}\\{studentFiles.ElementAt(i).ElementAt(0)}.{studentFiles.ElementAt(i).ElementAt(1)}";
+                    studentFiles.ElementAt(i).Add(filePath);
+                    File.Copy(studentFiles.ElementAt(i).ElementAt(2).ToString(), filePath);
+                    studentFiles.ElementAt(i).Remove(studentFiles.ElementAt(i).ElementAt(2));
+                }
+            }
+
+            message = dbFunc.studentRegister(studentInfo, studentFiles);
+            MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
+            
+            this.Close();
 
         }
 
         private void studentBirthDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            int studentAge = DateTime.Now.Year - studentBirthDate.SelectedDate.Value.Year;
-            studentAgeTbx.Text = studentAge.ToString();
+            if (studentBirthDate.Text != "") 
+            {
+                int studentAge = DateTime.Now.Year - studentBirthDate.SelectedDate.Value.Year;
+                studentAgeTbx.Text = studentAge.ToString();
+            }
+          
         }
 
         private void uploadFilesBtn_Click(object sender, RoutedEventArgs e)
@@ -245,10 +293,11 @@ namespace student_health_records_system
             {
                 for (int i = 0; i < ofd.FileNames.Count(); i++) 
                 {
-                    List<Object> temp = new List<Object>() 
+                    List<Object> temp = new List<Object>()
                     {
                         ofd.SafeFileNames.ElementAt(i),
                         "PDF",
+                        ofd.FileNames.ElementAt(i)
                     };
 
                     tempStudentFiles.Add(temp);
@@ -267,6 +316,14 @@ namespace student_health_records_system
         private void addStudentWindow_Closed(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lockImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            startCameraBtn.IsEnabled = false;
+            uploadImgBtn.IsEnabled = false;
+            CaptureImgBtn.IsEnabled = false;
+            lockImageBtn.IsEnabled = false;
         }
     }
 }
