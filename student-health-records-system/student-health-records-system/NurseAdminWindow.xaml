@@ -11,7 +11,7 @@
         <Label x:Name="searchBoxLbl" Content="Search" HorizontalAlignment="Left" Margin="24,47,0,0" VerticalAlignment="Top"/>
         <Button x:Name="addRecordBtn" Content="Add Record" HorizontalAlignment="Left" Margin="264,50,0,0" VerticalAlignment="Top"/>
         <Button x:Name="massInsertBtn" Content="Mass Insert" HorizontalAlignment="Left" Margin="352,50,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Left" Margin="177,342,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button x:Name="EditBtn" Content="NewName" HorizontalAlignment="Left" Margin="177,342,0,0" VerticalAlignment="Top" Width="47"/>
         <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="241,342,0,0" VerticalAlignment="Top"/>
         <Button x:Name="View" Content="Delete" HorizontalAlignment="Left" Margin="297,342,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="mainTable" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="24,115,38,118" AutoGenerateColumns="False"/>
