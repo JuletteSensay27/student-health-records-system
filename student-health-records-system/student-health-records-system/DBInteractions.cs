@@ -614,5 +614,20 @@ namespace student_health_records_system
             return studentCount.ToString();
         }
 
+        public List<List<string>> getAllStudents()
+        {
+            List<List<string>> allStudents = new List<List<string>>();
+
+            var result = dbconn.uspGetAllStudentNamesAndID().ToList();
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                List<string> temp = new List<string>() { result.ElementAt(i).Student_ID, result.ElementAt(i).Student_Name, result.ElementAt(i).Date_Created.ToString(), result.ElementAt(i).Date_Modified.ToString() };
+                allStudents.Add(temp);
+            }
+
+            return allStudents;
+        }
+
     }
 }

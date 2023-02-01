@@ -217,6 +217,13 @@ namespace student_health_records_system
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), studentID, stuFileID, stuFileName, stuFileType, stuFileLocation, dateCreated, dateModified);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.uspGetAllStudentNamesAndID")]
+		public ISingleResult<uspGetAllStudentNamesAndIDResult> uspGetAllStudentNamesAndID()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<uspGetAllStudentNamesAndIDResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vwAdminIDandName")]
@@ -1084,6 +1091,86 @@ namespace student_health_records_system
 				if ((this._Column1 != value))
 				{
 					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class uspGetAllStudentNamesAndIDResult
+	{
+		
+		private string _Student_ID;
+		
+		private string _Student_Name;
+		
+		private System.DateTime _Date_Created;
+		
+		private System.DateTime _Date_Modified;
+		
+		public uspGetAllStudentNamesAndIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Student ID]", Storage="_Student_ID", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string Student_ID
+		{
+			get
+			{
+				return this._Student_ID;
+			}
+			set
+			{
+				if ((this._Student_ID != value))
+				{
+					this._Student_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Student Name]", Storage="_Student_Name", DbType="VarChar(303) NOT NULL", CanBeNull=false)]
+		public string Student_Name
+		{
+			get
+			{
+				return this._Student_Name;
+			}
+			set
+			{
+				if ((this._Student_Name != value))
+				{
+					this._Student_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Date Created]", Storage="_Date_Created", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Created
+		{
+			get
+			{
+				return this._Date_Created;
+			}
+			set
+			{
+				if ((this._Date_Created != value))
+				{
+					this._Date_Created = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Date Modified]", Storage="_Date_Modified", DbType="DateTime NOT NULL")]
+		public System.DateTime Date_Modified
+		{
+			get
+			{
+				return this._Date_Modified;
+			}
+			set
+			{
+				if ((this._Date_Modified != value))
+				{
+					this._Date_Modified = value;
 				}
 			}
 		}
