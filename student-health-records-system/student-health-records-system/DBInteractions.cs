@@ -583,7 +583,7 @@ namespace student_health_records_system
 
         }
 
-        public string[] massStudentRegister(Dictionary<string, List<Object>> students/*, Dictionary<string, List<List<Object>>> studentsFile*/)
+        public string[] massStudentRegister(Dictionary<string, List<Object>> students)
         {
             string[] errorMessage = new string[2];
             int failedInserts = 0;
@@ -653,6 +653,33 @@ namespace student_health_records_system
 
             return errorMessage;
         }
+
+      /*  public string[] massStudentFilesAdd(Dictionary<string, List<List<Object>>> studentsFile) 
+        {
+            *//*
+             * Student ID
+             * original File Location
+             * FileName
+             * FileType
+             * 
+             *//*
+
+            var allStudentIDs = dbconn.uspGetAllStudentIDs().ToList();
+            List<string> temp = new List<string>();
+
+            for (int i = 0; i < allStudentIDs.Count; i++) 
+            {
+                temp.Add(allStudentIDs.ElementAt(0).student_ID.ToString());
+            }
+
+            for (int i = 0; i < studentsFile.Count; i++) 
+            {
+                for (int x = 0; x < studentsFile.Values.ElementAt(i).ElementAt(i).Count; i++) 
+                {
+
+                }
+            }
+        }*/
 
         private int studentFilesAdd(List<List<Object>> studentFiles, string actualStudentID) 
         {
