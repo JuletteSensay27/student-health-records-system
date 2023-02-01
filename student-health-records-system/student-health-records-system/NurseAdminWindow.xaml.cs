@@ -99,37 +99,88 @@ namespace student_health_records_system
 
         private void massInsertBtn_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
+            var result  = MessageBox.Show("Which Operation Do you want to proceed with? Yes-Mass Insert Students || No-Mass Insert Files","Mass Inserting", MessageBoxButton.YesNo);
+
+            if (result != MessageBoxResult.No) 
+            {
+
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "Csv Files (*.csv) | *.csv";
+                ofd.Multiselect = false;
+                int studentCounter = 0;
+                Dictionary<string, List<Object>> students = new Dictionary<string, List<object>>();
+                string[] message = new string[2];
+
+                if ((bool)ofd.ShowDialog())
+                {
+                    using (StreamReader sr = new StreamReader(ofd.FileName))
+                    {
+                        string line = string.Empty;
+
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            List<Object> tempStudentHolder = new List<Object>();
+                            string[] tempArr = line.Split(',');
+
+                            for (int i = 0; i < tempArr.Length; i++)
+                            {
+                                tempStudentHolder.Add(tempArr[i].ToString());
+                            }
+
+                            students.Add($"S{studentCounter + 1}", tempStudentHolder);
+                            studentCounter++;
+                        }
+                    }
+                }
+
+                message = dbFunctions.massStudentRegister(students);
+                MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
+                return;
+            }
+
+            massInsertFiles();
+
+
+        }
+
+        private void massInsertFiles() 
+        {
+            OpenFileDialog ofd = new OpenFileDialog();    
             ofd.Filter = "Csv Files (*.csv) | *.csv";
             ofd.Multiselect = false;
-            int studentCounter = 0;
-            Dictionary<string, List<Object>> students = new Dictionary<string, List<object>>();
-            string[] message = new string[2];
 
             if ((bool)ofd.ShowDialog()) 
             {
                 using (StreamReader sr = new StreamReader(ofd.FileName))
                 {
                     string line = string.Empty;
+                    int failCounter = 0;
+                    int successCounter = 0;
 
                     while ((line = sr.ReadLine()) != null)
                     {
-                        List<Object> tempStudentHolder = new List<Object>();
                         string[] tempArr = line.Split(',');
+                        List<Object> tempFileHolder = new List<Object>();
 
-                        for (int i = 0; i < tempArr.Length; i++) 
+                        for (int i = 0; i < tempArr.Length; i++)
                         {
-                            tempStudentHolder.Add(tempArr[i].ToString());
+                           tempFileHolder.Add(tempArr.ElementAt(i).ToString());
                         }
 
-                        students.Add($"S{studentCounter+1}", tempStudentHolder);
-                        studentCounter++;
+                        if (int.Parse(dbFunctions.massStudentFilesAdd(tempFileHolder).ToString()) != 0) 
+                        {
+                            failCounter++;
+                        }
+                        else
+                        {
+                            successCounter++;
+                        }
+
                     }
+
+                    MessageBox.Show($"Status: Mass Insert Files Report\nMessage:Successes{successCounter}\nFails:{failCounter}");
                 }
             }
-
-            message = dbFunctions.massStudentRegister(students);
-            MessageBox.Show($"Status: {message[0]}\nMessage:{message[1]}");
 
         }
     }
